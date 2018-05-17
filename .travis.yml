@@ -1,0 +1,15 @@
+dist: trusty
+sudo: true
+language: node_js
+branches:
+  only:
+  - develop
+git:
+  submodules: false
+node_js:
+- 9.5.0
+before_install:
+- npm update -g npm
+install:
+- npm install
+
