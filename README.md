@@ -15,7 +15,7 @@ Metaflux is a lightweight library that provides a store to your application.
 #### Step 1 (Require/Import).
 
 ```javascript
-const { Store } require('@rebelstack-io/metaflux');
+const { Store } = require('@rebelstack-io/metaflux');
 ```
 
 #### Step 2 (Initialize).
