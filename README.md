@@ -18,6 +18,13 @@ Metaflux is a lightweight library that provides a store to your application.
 const { Store } = require('@rebelstack-io/metaflux');
 ```
 
+#### Or when import is enabled:
+
+
+```javascript
+import { Store } from '@rebelstack-io/metaflux';
+```
+
 #### Step 2 (Initialize).
 
 
@@ -25,7 +32,8 @@ const { Store } = require('@rebelstack-io/metaflux');
 const storage = new Store(
 	{Counter: 1},
 	{INCREMENT: (action, state) => {
-		return {newState: state.Counter + 1};
+		state.Counter = state.Counter + 1;
+		return {newState: state};
 	}
 });
 ```
@@ -49,3 +57,28 @@ storage.on('INCREMENT', action => {
 	// UPDATE DOM.
 });
 ```
+
+### MetaComponents
+
+MetaComponents are WebComponents that support Metaflux's storage.
+
+### Usage
+
+```javascript
+import { MetaComponent } from '@rebelstack-io/metaflux';
+
+class MyComponent extends MetaComponent {
+	render () {
+		this.content = document.createElement('div');
+		this.content.innerHtml = `
+			<div>
+				<h1>Hello World</h1>
+			</div>
+		`;
+		return this.content;
+	}
+}
+
+window.customElements.define('my-component', MyComponent);
+```
+
