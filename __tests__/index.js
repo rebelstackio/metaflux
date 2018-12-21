@@ -1,3 +1,4 @@
+// TODO: find way to make WebComponents available for jsdom
 import { Store, MetaComponent } from '../lib/index';
 
 class MyComponent extends MetaComponent {
