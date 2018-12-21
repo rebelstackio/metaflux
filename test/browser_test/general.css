@@ -1,0 +1,102 @@
+/* Global variables */
+:root {
+	--custom-border-radius: 6px;
+	--clear-color: #e2e2e2;
+	--clear-hover: #d1d1d1;
+	--dark-color: #333333;
+	--custom-green: #28B862;
+	--custom-blue: #00a4df;
+	--custom-red: #f56954;
+}
+@font-face {
+	font-family: 'Quicksand Regular';
+	src: url('./Quicksand/Quicksand-Regular.ttf') format('truetype');
+}
+html, body {
+	background-color: var(--clear-color);
+	margin: 0;
+	padding: 0;
+}
+* {
+	font-family: 'Quicksand Regular';
+	color: var(--dark-color);
+}
+body {
+	display: grid;
+	place-items: center;
+}
+.block {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto 1fr;
+	grid-template-areas:
+		"header header2"
+		"content dispatcher";
+}
+.block > h3:first-child {
+	grid-area: header;
+}
+.block > h3:nth-child(2) {
+	grid-area: header2;
+}
+.block > .content {
+	grid-area: content;
+}
+.block > .dispatcher {
+	grid-area: dispatcher;
+}
+.content {
+	background-color: var(--dark-color);
+	border: 1px solid gray;
+	border-radius: var(--custom-border-radius);
+	width: 300px;
+	height: 200px;
+	padding: 10px;
+	box-shadow: 3px 3px 9px 0px rgba(0,0,0,0.75);
+}
+my-component, my-shadow-component {
+	background-color: var(--dark-color);
+	display: grid;
+	border-radius: var(--custom-border-radius);
+	place-items: center;
+	width: 100%;
+	height: 100%;
+}
+my-component *,
+my-shadow-component * {
+	background-color: var(--dark-color);
+}
+.title {
+	color: var(--clear-color);
+}
+.status {
+	text-align: center;
+}
+.dispatch {
+	cursor: pointer;
+	user-select: none;
+	padding: 10px;
+	text-align: center;
+	background-color: #ffffff;
+	border: 1px solid var(--clear-hover);
+	border-radius: var(--custom-border-radius);
+	margin-bottom: 10px;
+}
+.dispatch[state="1"],
+.status[state="1"] {
+	color: var(--custom-green);
+}
+.dispatch[state="2"],
+.status[state="2"] {
+	color: var(--custom-blue);
+}
+.dispatch[state="3"],
+.status[state="3"] {
+	color: var(--custom-red);
+}
+.dispatch:hover,
+.dispatch.selected {
+	background-color: var(--clear-hover);
+	color: var(--dark-color);
+	border-color: gray;
+}
