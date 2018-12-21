@@ -1,5 +1,6 @@
 const assert = require('assert');
 const Store = require('../lib/store');
+
 let storage = null;
 
 describe('Metaflux storage action dispatching flow', () => {
@@ -13,12 +14,12 @@ describe('Metaflux storage action dispatching flow', () => {
 		});
 	});
 	describe('Storage was set properly', () => {
-		it('Storage.getState().Counter must be equal to 1', () => {
+		it('Storage.getState().Counter initially must be equal to 1', () => {
 			assert.equal(storage.getState().Counter, 1);
 		});
 	});
 	describe('Dispatching action', () => {
-		describe('Testing Storage.on("INCREMENT") works', () => {
+		describe('Testing Storage.on("INCREMENT") is called', () => {
 			it('Store.on() attribute action.newState must equal to 2', done => {
 				setTimeout(() => {
 					storage.dispatch({
