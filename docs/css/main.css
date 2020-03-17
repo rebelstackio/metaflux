@@ -1,0 +1,70 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: .5fr 4fr 1fr;
+    padding: 14px 10px;
+    background-color: #84099e;
+    color: #fff;
+    column-gap: 10px;
+}
+
+.main-header > .items {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center start;
+    column-gap: 10px;
+}
+
+.main-header .logo > img {
+    padding: 10px;
+    background-color: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.main-header .logo {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center start;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.main-header .socials {
+    display: grid;
+    grid-auto-flow: column;
+    place-items:center;
+}
+
+.main-header .socials > div > * {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.main-header .items > *:not(.active) {
+    color: rgba(255,255,255, .7);
+    cursor: pointer;
+    transition: color .3s ease;
+}
+
+.main-header .items > *:not(.active):hover { 
+    color: #fff;
+}
+
+.main-header .items > * {
+    position: relative;
+    cursor: default;
+}
+
+.main-header .items > *.active::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid rgba(255,255,255,.6);
+    left: 0;
+    right: 0;
+    bottom: -3px;
+}
