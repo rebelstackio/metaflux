@@ -49,6 +49,7 @@ body {
 
 .main-content .sumary > div > p {
 	margin: 10px 0;
+	text-align: justify;
 }
 
 .sumary h1 {
