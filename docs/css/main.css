@@ -1,74 +1,96 @@
+/* Global variables */
+:root {
+	--custom-border-radius: 6px;
+	--clear-color: ghostwhite;
+	--main-color: #84099e;
+	--main-color-light: rgba(132, 9, 158, .5); 
+	--dark-color: #333333;
+	--custom-green: #28B862;
+	--custom-blue: #00a4df;
+	--custom-red: #f56954;
+}
+html, body {
+	background-color: var(--clear-color);
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body {
+	display: grid;
+	/* place-items: center; */
+}
+
 .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: grid;
-    grid-template-columns: .5fr 4fr 1fr;
-    padding: 14px 10px;
-    background-color: #84099e;
-    color: #fff;
-    column-gap: 10px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: grid;
+	grid-template-columns: .5fr 4fr 1fr;
+	padding: 14px 10px;
+	background-color: #84099e;
+	color: #fff;
+	column-gap: 10px;
 }
 
 .main-header > .items {
-    display: grid;
-    grid-auto-flow: column;
-    place-content: center start;
-    column-gap: 10px;
+	display: grid;
+	grid-auto-flow: column;
+	place-content: center start;
+	column-gap: 10px;
 }
 
 .main-header .logo > img {
-    padding: 10px;
-    background-color: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    width: 70px;
-    border-radius: 50%;
+	padding: 10px;
+	background-color: rgba(0,0,0,.5);
+	box-sizing: border-box;
+	width: 70px;
+	border-radius: 50%;
 }
 
 .main-header .logo {
-    display: grid;
-    grid-auto-flow: column;
-    place-content: center start;
-    align-items: center;
-    column-gap: 10px;
+	display: grid;
+	grid-auto-flow: column;
+	place-content: center start;
+	align-items: center;
+	column-gap: 10px;
 }
 
 .main-header .socials {
-    display: grid;
-    grid-auto-flow: column;
-    place-items:center;
+	display: grid;
+	grid-auto-flow: column;
+	place-items:center;
 }
 
 .main-header .socials > div > * {
-    font-size: 2em;
-    cursor: pointer;
+	font-size: 2em;
+	cursor: pointer;
 }
 
 .main-header .items > *:not(.active) {
-    color: rgba(255,255,255, .7);
-    cursor: pointer;
-    transition: color .3s ease;
+	color: rgba(255,255,255, .7);
+	cursor: pointer;
+	transition: color .3s ease;
 }
 
 .main-header .items > *:not(.active):hover { 
-    color: #fff;
+	color: #fff;
 }
 
 .main-header .items > * {
-    position: relative;
-    cursor: default;
+	position: relative;
+	cursor: default;
 }
 
 .main-header .items > *.active::after {
-    position: absolute;
-    content: "";
-    border-bottom: 2px solid rgba(255,255,255,.6);
-    left: 0;
-    right: 0;
-    bottom: -3px;
+	position: absolute;
+	content: "";
+	border-bottom: 2px solid rgba(255,255,255,.6);
+	left: 0;
+	right: 0;
+	bottom: -3px;
 }
 
 #content {
-    margin-top: 100px;
+	margin-top: 100px;
 }
