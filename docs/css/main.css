@@ -20,6 +20,14 @@ body {
 	/* place-items: center; */
 }
 
+.main-content {
+	display: grid;
+	max-width: calc(100vw);
+	margin: auto;
+	margin-bottom: 200px;
+}
+
+
 .main-header {
 	position: fixed;
 	top: 0;
@@ -31,6 +39,8 @@ body {
 	background-color: #84099e;
 	color: #fff;
 	column-gap: 10px;
+	z-index: 10;
+	overflow-x: auto;
 }
 
 .main-header > .items {
@@ -49,8 +59,8 @@ body {
 }
 
 .main-header .logo {
-	display: grid;
-	grid-auto-flow: column;
+	/* display: grid; */
+	/* grid-auto-flow: column; */
 	place-content: center start;
 	align-items: center;
 	column-gap: 10px;
@@ -93,4 +103,39 @@ body {
 
 #content {
 	margin-top: 100px;
+	position: relative;
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	background-color: #d9d9d9;
+	position: absolute;
+	bottom: 0;
+	place-content: center;
+	padding: 10px;
+	left: 0;
+	right: 0;
+	column-gap: 10px;
+}
+
+.footer img {
+	grid-area: 2 / 2;
+	width: 5em;
+	place-self: center;
+}
+
+.footer > div {
+	display: grid;
+	place-self: center;
+}
+
+.footer a {
+	text-decoration: none;
+	color: var(--primary-bg);
+    transition: all .3s ease;
+}
+
+.footer a:hover {
+    color: var(--primary-bg-hv);
 }

@@ -4,29 +4,27 @@
 }
 
 .main-content {
-	display: grid;
-	max-width: calc(100vw - 20px);
-	margin: auto;
+	row-gap: 15px;
 }
 
-.main-content .sumary {
+.sumary {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	background-color: #fff;
 	padding: 10px;
 }
 
-.main-content .sumary > div {
+.sumary > div {
 	padding: 0 15px;
 	color: #666;
 }
 
-.main-content .sumary > img {
+.sumary > img {
 	width: 10em;
 	place-self: center;
 }
 
-.main-content .sumary > div > p {
+.sumary > div > p {
 	margin: 10px 0;
 	text-align: justify;
 }
@@ -52,6 +50,7 @@
 	column-gap: 10px;
 	background-color: rgba(252, 250, 226,.5);
 	text-align: justify;
+	padding: 0 15px;
 }
 
 .benefits > * {
@@ -64,3 +63,20 @@
 	font-size: 50px;
 	color: var(--main-color)
 }
+
+.related {
+    display: grid;
+    text-align: center;
+}
+
+.related > div {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	place-items: center;
+}
+
+.related img {
+	max-width: 150px;
+	cursor: pointer;
+}
+
