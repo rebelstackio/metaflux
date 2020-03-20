@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test Components</title>
+	<script type="module" src="js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="general.css">
+</head>
+<body>
+	<div class="main-content">
+		<h2>Testing MetaComponent, MetaShadowComponent and MetaContainer classes</h2>
+		<div id="metacomponent-testing-block" class="block">
+			<h3>MetaComponent:</h3>
+			<h3>Select State:</h3>
+			<div class="content"></div>
+			<div class="dispatcher" component="MetaComponent">
+				<div class="dispatch selected" state=1>{ initial state }</div>
+				<div class="dispatch" state=2>{ second state }</div>
+				<div class="dispatch" state=3>{ third state }</div>
+			</div>
+		</div>
+		<div id="metashadowcomponent-testing-block" class="block">
+			<h3>MetaShadowComponent:</h3>
+			<h3>Select State:</h3>
+			<div class="content"></div>
+			<div class="dispatcher" component="MetaShadowComponent">
+				<div class="dispatch selected" state=1>{ initial state }</div>
+				<div class="dispatch" state=2>{ second state }</div>
+				<div class="dispatch" state=3>{ third state }</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="metaflux.js"></script></body>
+</html>
