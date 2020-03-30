@@ -25,4 +25,7 @@
 		.main-header .active {
 			display: none;
 		}
+		pretty-menu::after {
+			display: none !important;
+		}
 	}

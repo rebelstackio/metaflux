@@ -33,6 +33,8 @@ function writeMD(text, box) {
 }
 
 function addStyledCodeExamples() {
-	hljs.initHighlighting();
-	hljs.configure()
+	if(typeof hljs !== 'undefined') {
+		hljs.initHighlighting();
+		hljs.configure()
+	}
 }
