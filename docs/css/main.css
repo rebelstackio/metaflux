@@ -24,7 +24,7 @@ body {
 	display: grid;
 	max-width: calc(100vw);
 	margin: auto;
-	margin-bottom: 200px;
+	margin-bottom: 239px;
 }
 
 
@@ -39,7 +39,7 @@ body {
 	background-color: #84099e;
 	color: #fff;
 	column-gap: 10px;
-	z-index: 10;
+	z-index: 100;
 	overflow-x: auto;
 }
 
@@ -138,4 +138,13 @@ body {
 
 .footer a:hover {
     color: var(--primary-bg-hv);
+}
+
+.md-content {
+	padding: 10px;
+	overflow: auto;
+}
+
+.md-content > h1:not(:first-child) {
+	margin-top: 10px;
 }
