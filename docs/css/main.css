@@ -131,7 +131,7 @@ body {
 	place-self: center;
 }
 
-.footer a {
+.footer a, a {
 	text-decoration: none;
 	color: var(--primary-bg);
     transition: all .3s ease;

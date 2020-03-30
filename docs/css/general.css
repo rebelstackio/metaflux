@@ -80,3 +80,11 @@
 	cursor: pointer;
 }
 
+.communication, .issues {
+	padding: 10px;
+}
+
+.communication h3, .issues h3 {
+	margin: 10px
+	 0px;
+}
