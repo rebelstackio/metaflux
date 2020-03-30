@@ -13,6 +13,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
 	<script src="/js/markdown.js"></script>
 	<script src="/js/index.js/"></script>
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/atom-one-dark.min.css">
 	<title>Metaflux || Overview</title>
 </head>
 <body>
@@ -35,7 +37,10 @@
 		</div>
 <!--                                  MAIN MENU                                  -->
 		<pretty-menu offset-top="98">
-			<pretty-menu-item selected>
+			<pretty-menu-item
+			action="CHANGE-VIEW" 
+			action-data="/docs/overview/"
+			>
 				<div>
 					Overview
 				</div>
@@ -48,10 +53,9 @@
 					Getting Started
 				</div>
 			</pretty-menu-item>
-			<pretty-menu-item 
+			<pretty-menu-item
 			action="CHANGE-VIEW" 
-			action-data="/docs/api/"
-			>
+			action-data="/docs/api/">
 				<div>API Reference</div>
 			</pretty-menu-item>
 			<pretty-menu-item 
@@ -60,14 +64,12 @@
 			>
 				<div>Examples</div>
 			</pretty-menu-item>
-			<pretty-menu-item 
-			action="CHANGE-VIEW" 
-			action-data="/docs/faq/">
+			<pretty-menu-item selected>
 				<div>FAQ</div>
 			</pretty-menu-item>
 		</pretty-menu>
 <!--                             MAIN CONTENT                                   -->
-		<div class="main-content" md-path="/docs/overview/overview.md">
+		<div class="main-content" md-path="/docs/faq/faq.md">
 			
 		</div>
 <!--                              FOOTER                                        -->
