@@ -148,3 +148,21 @@ body {
 .md-content > h1:not(:first-child) {
 	margin-top: 10px;
 }
+
+pretty-menu-item[type="group"] > .p-menu-item-box {
+	height: unset !important;
+}
+
+pretty-menu-item[type="group"] svg {
+	margin-top: 10px;
+	place-self: start center !important;
+}
+
+pretty-menu-item > .p-menu-item-box {
+	padding: 0 !important;
+}
+
+pretty-menu-item[type="group"] ul{
+	list-style: none;
+	margin-left: 0 !important;
+}
