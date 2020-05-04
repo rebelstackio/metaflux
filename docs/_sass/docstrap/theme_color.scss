@@ -1,0 +1,56 @@
+/*--------------------------- themes----------------------------------- */
+/*<purple>*/
+.docs-theme-purple{
+	& .main-header {
+		background-color: $main-color !important;
+	}
+	& .sumary pretty-button * {
+		color: $main-color-light !important;
+		border-color: $main-color-light !important;
+		&:hover {
+			color: $main-color !important;
+			border-color: $main-color !important;
+		}
+	}
+	& .benefits .porperty > svg {
+		color: $main-color !important
+	}
+}
+/*</purple>*/
+/*<orange>*/
+.docs-theme-orange {
+	& .main-header {
+		background-color: $orange-color !important;
+	}
+	& .sumary pretty-button * {
+		color: $orange-color-light !important;
+		border-color: $orange-color-light !important;
+		&:hover {
+			color: $orange-color !important;
+			border-color: $orange-color !important;
+		}
+	}
+	& .benefits .porperty > svg {
+		color: $orange-color !important
+	}
+}
+/*</orange>*/
+/*<fuchsia>*/
+.docs-theme-fuchsia{
+	& .main-header {
+		background-color: $fuchsia-color !important;
+	}
+	& .sumary pretty-button * {
+		color: $fuchsia-color-light !important;
+		border-color: $fuchsia-color-light !important;
+		&:hover {
+			color: $fuchsia-color !important;
+			border-color: $fuchsia-color !important;
+		}
+	}
+	& .benefits .porperty > svg {
+		color: $fuchsia-color !important
+	}
+}
+/*</fuchsia>*/
+/*---------------------------END-THEMES-------------------------------*/

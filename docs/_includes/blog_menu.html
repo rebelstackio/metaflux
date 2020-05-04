@@ -1,0 +1,10 @@
+<pretty-menu offset-top="98">
+    {% for post in site.posts %}
+        <pretty-menu-item>
+            <a href="{{post.url | relative_url}}">
+                {{post.title}} - 
+                <span class="post-date">{{post.date | date: "%b,%d %Y"}}</span>
+            </a>
+        </pretty-menu-item>
+    {% endfor %}
+</pretty-menu>

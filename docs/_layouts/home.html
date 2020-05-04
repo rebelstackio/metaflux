@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="main-content">
+    <div class="sumary">
+      <div>
+        <h1> {{site.name}} </h1>
+        <p>
+          {{site.description}}
+        </p>
+        <pretty-button size="large" href="{{'/docs/overview/' | relative_url}}" value="Get Started"></pretty-button>
+      </div>
+      <img src="{{site.darklogo | relative_url}}" alt="default-logo">
+    </div>
+    <div class="benefits">
+      {{site.benefits}}
+    </div>
+    <div class="related">
+      <h3>Other libraries well-siuted with {{site.name}}</h3>
+      <div class="related-links">
+        {{site.links}}
+      </div>
+    </div>
+  </div>
+</div>
