@@ -9,6 +9,9 @@ class MyComponent extends MetaComponent {
 	 * Render Component
 	 */
 	render () {
+		const test = Div().Div({className: 'test',id: 'test',attributes: {test: 'test'}})
+
+		console.log(test);
 		const content = document.createElement('div');
 		const title = document.createElement('div');
 		title.className = 'title';
