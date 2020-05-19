@@ -12,15 +12,12 @@ class MyComponent extends MetaShadowComponent {
 	 * Render Component
 	 */
 	render () {
-		const content = document.createElement('div');
-		const title = document.createElement('div');
-		title.className = 'title';
-		title.textContent = 'Bond to Store.MetaShadowComponent';
-		content.appendChild(title);
-		this.status = document.createElement('div');
-		this.status.className = 'status';
-		content.appendChild(this.status);
-		return content;
+		this.status =
+		Div({}, () => (
+			Div({ className: 'title' }, 'Bond to Store.MetaShadowComponent')
+		))
+		.Div({ className: 'status' })
+		return this.status.baseNode();
 	}
 	/**
 	 * Add listeners, effects, events
