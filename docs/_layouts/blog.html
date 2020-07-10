@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="md-content">
+    {%- include blog_menu.html -%}
+    {{content}}
+    <div class="article-date">
+        {{page.date | date: "%b,%d %Y"}}
+    </div>
+</div>
+
+<script>
+    if(typeof hljs !== 'undefined') {
+		hljs.initHighlighting();
+		hljs.configure()
+	}
+</script>

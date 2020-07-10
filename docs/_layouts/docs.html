@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="md-content">
+	{%- include sidebar.html -%}
+	{{ content }}
+</div>
+
+<script>
+	const menuList = document.querySelectorAll('pretty-menu-item');
+	const item = menuList[parseInt('{{page.tabindex}}')];
+	item.setAttribute('selected', '');
+	if(typeof hljs !== 'undefined') {
+		hljs.initHighlighting();
+		hljs.configure()
+	}
+</script>

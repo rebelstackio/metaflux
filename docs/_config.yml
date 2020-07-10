@@ -1,0 +1,71 @@
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Metaflux Documentation
+email: osmarreyesst@gmai.com
+description: >- # this means to ignore newlines until "baseurl:"
+  the flux pattern for any environment, flexible and friendly with vanilla javascript and web components.
+  Metaflux is an open-source library providing tools that allow easy adoption of the flux (observable) pattern in your code which simplifies complex UI, easy debugging and unit-testing.
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+benefits: >-
+  <div class="porperty">
+  <i class="fas fa-cubes"></i>
+  <h3>Persistence</h3>
+  <p>
+  the persistence of UI state simplifies effects of many event-emitting components in your application which can quickly become a tangled web using other patterns like MVC or MVVM
+  </p>
+  </div>
+  <div class="porperty">
+  <i class="fas fa-bug"></i>
+  <h3>Easy UI unit testing</h3>
+  <p>
+  With persistent state and actions following the flux pattern, it makes it easy to place a UI into a given state, call an action and verify the resulting state.
+  </p>
+  </div>
+  <div class="porperty">
+  <i class="fas fa-cogs"></i>
+  <h3>flexible</h3>
+  <p>
+  Metaflux works in any javascript environment and provides relief for developers wanting to follow web standards like es6 and web components without loading large and opinionated frameworks and libraries like React.
+  </p>
+  </div>
+links: >-
+  <a href="#expressif">
+  <img src="assets/img/expressif-boxmodel.jpeg" alt="expressif logo">
+  </a>
+  <a href="#pretty-components">
+  <img src="assets/img/pretty-boxmodel.jpeg" alt="pretty components logo">
+  </a>
+name: Metaflux
+repository: https://github.com/rebelstackio/metaflux
+discord: https://discord.gg/HmuBCRb
+stackoverflow: \#linkto-so
+themecolor: purple
+clearlogo: assets/img/metaflux-logo-white.svg
+darklogo: assets/img/metaflux-logo-black.svg
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

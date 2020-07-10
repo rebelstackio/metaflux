@@ -1,0 +1,79 @@
+@charset "utf-8";
+/*variables*/
+$custom-border-radius: 6px;
+$clear-color: ghostwhite;
+/* purple theme */
+$main-color: #84099e;
+$main-color-light: rgba(132, 9, 158, .5);
+/* default theme */
+$default-d-color: #09569e;
+$default-d-color-light: rgba(9, 86, 158, .5);
+/* orange theme*/
+$orange-color: #e48d0d;
+$orange-color-light: rgba(228, 141, 13, .5);
+/* fuchsia theme*/
+$fuchsia-color: #e91e63;
+$fuchsia-color-light: rgba(233, 30, 99, .5);
+/* dark theme*/
+
+$dark-color: #333333;
+$custom-blue: #00a4df;
+$custom-red: #f56954;
+
+/*media querys*/
+
+@mixin media-query($device) {
+	@media screen and (max-width: $device) {
+		@content;
+	}
+}
+
+@mixin relative-font-size($ratio) {
+		font-size: $base-font-size * $ratio;
+}
+
+@media only screen and (min-device-width: 300px)
+	and (max-device-width: 800px)
+	and (orientation: portrait)
+	{
+		.benefits {
+			grid-auto-flow: row !important;
+			row-gap: 10px;
+			padding: 0 10px !important;
+		}
+		.mobile-hidden {
+			display: none !important;
+		}
+		.main-header {
+			grid-template-columns: auto 1fr;
+			& .active {
+				display: none;
+			}
+		}
+		.footer img {
+			width: 3em;
+		}
+		.sumary {
+			grid-template-columns: unset !important;
+			& img {
+				grid-area: 1 / 1;
+			}
+		}
+		pretty-menu::after {
+			display: none !important;
+		}
+		.related > div {
+			grid-auto-flow: row !important;
+		}
+		.md-content{
+			margin-left: unset !important;
+		}
+	}
+
+
+/* import other sass files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import
+  "docstrap/base",
+  "docstrap/theme_color.scss"
+;

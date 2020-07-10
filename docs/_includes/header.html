@@ -1,0 +1,31 @@
+<div class="main-header">
+	<div class="logo">
+		<img src="{{site.clearlogo | relative_url }}" alt="default-logo">
+	</div>
+	<div class="items">
+		<div name="{{site.baseurl}}" class="item active">
+			<a href="{{ site.baseurl }}">
+				Home
+			</a>
+		</div>
+		<div name="docs" class="item">
+			<a href="{{'docs/overview/' | relative_url}}">
+				Documentation
+			</a>
+		</div>
+		<div name="community" class="item">
+			<a href="{{'community/' | relative_url}}">
+				Community
+			</a>
+		</div>
+		<div name="blog" class="item">
+			<a href="{{'blog/' | relative_url}}">
+				Blog
+			</a>
+		</div>
+	</div>
+	<div class="socials mobile-hidden">
+		<a class="gh" href="{{site.repository}}" target="_blank"><i class="fab fa-github"></i></a>
+		<a class="discord" href="{{site.discord}}" target="_blank"><i class="fab fa-discord"></i></a>
+	</div>
+</div>

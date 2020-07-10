@@ -1,9 +1,9 @@
-
-
-# ![metaflux logo](https://res.cloudinary.com/rebelstackio/image/upload/v1537996807/metaflux-logo_dpykyn.svg "metaflux logo") metaflux
-Simplifying the flux/redux pattern for vanilla (es6) javascript
-
-Metaflux is a lightweight library that provides a store to your application.
+---
+layout: docs
+title: Getting Started
+permalink: /docs/getting-started/
+tabindex: 1
+---
 
 ## Getting Started
 
@@ -163,11 +163,15 @@ Every Custom element can be chain with other elements or it self, Notice that it
 const span = Div().Div().Span(false, 'Hello world');
 const base = span.baseNode();
 ```
+
 - the constant span:
+
 ```html
 <span>Hello world</span>
 ```
+
 - the constant base:
+
 ```html
 <div>
 	<div>
@@ -183,6 +187,7 @@ All the custom elements recive 2 non-mandatory parameters (props, content).
 
 #### Examples:
 - props
+
 ```js
 Div({
 	id: 'element',
@@ -193,7 +198,9 @@ Div({
 	...
 })
 ```
+
 - content
+
 ```js
 // as a string
 Select(false, `
@@ -221,12 +228,13 @@ Select(false, () => {
 		)
 	})
 })
-
 ```
+
 #### Handle Store events
 with the custom element there are two ways to listen to store events:
 
 - onStoreEvent method (notice that all HTMLElement this method in their prototype):
+
 ```js
 Div()
 .Button({attributes: { disabled: '' }}, 'click me')
@@ -237,6 +245,7 @@ Div()
 ```
 
 - events property in the Object content (notice that here you can listen to as many events as you want)
+
 ```js
 Div({}, {
 	content: Div().Div().H1({}, 'Hello world').baseNode(),
@@ -246,7 +255,9 @@ Div({}, {
 	}
 });
 ```
+
 #### More Examples
+
 ```js
 Form({}, () => (
     [
@@ -258,6 +269,7 @@ Form({}, () => (
     ]
 ));
 ```
+
 ```html
 <form>
   <label>Email</label>
@@ -267,9 +279,11 @@ Form({}, () => (
   <button id="btn-from">Login</button>
 </form>
 ```
+
 ```js
 A({href: '#metaflux'}, 'Click me');
 ```
+
 ```html
 <a href="#metaflux">Click me</a>
 ```
