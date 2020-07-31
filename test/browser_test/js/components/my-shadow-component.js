@@ -40,4 +40,4 @@ class MyComponent extends MetaShadowComponent {
 		};
 	}
 }
-window.customElements.define('my-shadow-component', MyComponent);
+DefineElement('my-shadow-component', MyComponent);
