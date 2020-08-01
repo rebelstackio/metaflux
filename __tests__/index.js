@@ -26,6 +26,8 @@ class MyShadoComponent extends MetaShadowComponent {
 	}
 }
 
+/**-------------------------METAVIEWS---------------------------------------------- */
+
 test('Meta Shadow component to be HTMLElement', () => {
 	DefineElement('my-shadow-component', MyShadoComponent);
 	document.body.MyShadowComponent();
@@ -66,7 +68,39 @@ test('MetaComponent with state change', () => {
 	expect(el.innerHTML).toEqual('2');
 });
 
+test('MetaComponent and MetaShadow component addListeners', () => {
+	const mcFn = jest.fn();
+	const mscFn = jest.fn();
+	class MyComponent extends MetaComponent {
+		render () {
+			return `This is my component`;
+		}
+		addListeners() {
+			this.addEventListener('click', mcFn);
+		}
+	}
+	DefineElement('mc-component', MyComponent);
+	class MyShadoComponent extends MetaShadowComponent {
+		constructor() {
+			super();
+			this.styles = []
+		}
 
+		addListeners() {
+			this.addEventListener('click', mscFn);
+		}
+		render() {
+			return `This is my shadow component`;
+		}
+	}
+	DefineElement('msc-component', MyShadoComponent);
+	document.body.McComponent().click();
+	document.body.MscComponent().click();
+	expect(mcFn).toHaveBeenCalled();
+	expect(mscFn).toHaveBeenCalled();
+});
+
+/**-----------------------------CUSTOM ELEMENTS---------------------------------- */
 
 test('elmenet Div', () => {
 	const el = Div({id: 'test-id'}, 'test-div');
@@ -104,4 +138,27 @@ test('Custom elements props (classList, attributtes)', () => {
 	const el = Div({classList: ['cl1', 'cl2'], attributes:{'att1': '1'}})
 	expect(el.classList.length).toEqual(2);
 	expect(el.getAttribute('att1')).toEqual('1')
+})
+
+/** ------------------------STORE----------------------------------------------- */
+
+test('storage dispatch without handlers', () => {
+	storage = new Store({}, {});
+	storage.dispatch({type: 'CUSTOM'})
+	storage.on('CUSTOM', (action) => {
+		expect(action.type, 'CUSTOM');
+	})
+})
+
+test('storage callback after dispatch', () => {
+	storage = new Store({val: '1'}, {});
+	storage.dispatch({ type: 'CUSTOM', cb: (state) => {
+		expect(state.val).toEqual('1');
+	}})
+})
+
+test('storage get handlers', () => {
+	storage = new Store({}, { 'EVENT_TYPE': () => { return { newState: {} } } });
+	const _h = storage.getHandlers();
+	expect( typeof _h['EVENT_TYPE'] ).toEqual('function')
 })
