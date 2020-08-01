@@ -1,4 +1,4 @@
-import {Div, DefineElement} from '../lib/customelements/ElementCreator';
+import {Div, DefineElement, Button} from '../lib/customelements/ElementCreator';
 import { MetaComponent } from '../lib/metaviews/meta-component';
 import { MetaShadowComponent } from '../lib/metaviews/meta-shadow-component';
 const Store = require('../lib/store');
@@ -59,7 +59,7 @@ test('MetaComponent with state change', () => {
 		}
 	}
 	DefineElement('stateful-component', myStateFulComponent);
-	document.body.StatefulComponent();
+	document.body.appendChild(StatefulComponent());
 	const el = document.querySelector('stateful-component > div');
 	expect(el.innerHTML).toEqual('1');
 	storage.dispatch({ type: 'INCREMENT' });
@@ -77,4 +77,31 @@ test('elmenet Div', () => {
 test('Base node Return top parent node', () => {
 	const el = Div({id: 'parent-el'}).Span().Span().Div().baseNode();
 	expect(el.id).toEqual('parent-el')
+});
+
+test('onStoreEvent expecto to be called', () => {
+	global.storage = new Store({val: 1}, { 'INCREMENT': (a, s) => { s.val++; return {newState: s} } })
+	const calleable = jest.fn();
+	const el = Button().onStoreEvent('INCREMENT', calleable)
+	global.storage.dispatch({type: 'INCREMENT'})
+	expect(calleable).toHaveBeenCalled();
+});
+
+test('onStoreEvent expect to throw error when storage is not defined', () =>{
+	global.storage = undefined;
+	expect(() => {
+		const el = Div().onStoreEvent('EVENT');
+	}).toThrow();
+});
+
+test('setAtrributes add multiples attributes to an element', () => {
+	const el = Div().setAttributes({att1: '1', att2: '2'});
+	expect(el.getAttribute('att1')).toEqual('1');
+	expect(el.getAttribute('att2')).toEqual('2');
+})
+
+test('Custom elements props (classList, attributtes)', () => {
+	const el = Div({classList: ['cl1', 'cl2'], attributes:{'att1': '1'}})
+	expect(el.classList.length).toEqual(2);
+	expect(el.getAttribute('att1')).toEqual('1')
 })
