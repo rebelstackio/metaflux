@@ -9,8 +9,9 @@
 	],
 	"scripts": {
 		"start": "./node_modules/.bin/webpack-dev-server  --mode development",
-		"test": "jest --watch --verbose",
-		"coverage": "jest --watch --verbose  --coverage",
+		"test": "jest --verbose",
+		"test:dom": "jest --watch --verbose  --coverage",
+		"coverage": "NODE_PATH=src node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -R spec test",
 		"build": "npx webpack --config webpack.config.js"
 	},
 	"jest": {
