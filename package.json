@@ -10,6 +10,7 @@
 	"scripts": {
 		"start": "./node_modules/.bin/webpack-dev-server  --mode development",
 		"test": "jest",
+		"test:watch": "jest --watch",
 		"build": "npx webpack --config webpack.config.js"
 	},
 	"keywords": [
