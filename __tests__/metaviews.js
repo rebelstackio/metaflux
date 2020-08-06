@@ -1,8 +1,8 @@
 import { MetaComponent } from '../lib/metaviews/meta-component';
 import { MetaShadowComponent } from '../lib/metaviews/meta-shadow-component';
-const Store = require('../lib/store');
 import {Div, DefineElement} from '../lib/customelements/ElementCreator';
-require('../lib/metaviews/meta-base');
+const Store = require('../lib/store');
+import metaBase, { MetaBase } from '../lib/metaviews/meta-base';
 
 let storage = null;
 
@@ -22,7 +22,7 @@ class MyShadoComponent extends MetaShadowComponent {
 
 	}
 	render() {
-		return `This is my shadow component`;
+		return Div({}, `This is my shadow component`);
 	}
 }
 
@@ -42,6 +42,7 @@ test('Meta component to be HTMLElement', () => {
 
 test('MetaComponent with state change', () => {
 	storage = new Store({val: 1}, { 'INCREMENT': (a, s) => { s.val++; return {newState: s} } })
+	let fn = jest.fn();
 	class myStateFulComponent extends MetaComponent {
 		constructor() {
 			super(storage);
@@ -52,47 +53,39 @@ test('MetaComponent with state change', () => {
 		}
 		handleStoreEvents() {
 			return {
-				'INCREMENT': () => {
-					this.content.innerHTML = this.storage.getState().val;
-				}
+				'INCREMENT': fn
 			}
 		}
 	}
-
 	DefineElement('stateful-component', myStateFulComponent);
 	document.body.appendChild(StatefulComponent());
-	const el = document.querySelector('stateful-component > div');
-	expect(el.innerHTML).toEqual('1');
 	storage.dispatch({ type: 'INCREMENT' });
-	expect(el.innerHTML).toEqual('2');
+	expect(fn).toHaveBeenCalled();
 });
 
 test('MetaShadowComponent with state change', () => {
 	storage = new Store({val: 1}, { 'INCREMENT': (a, s) => { s.val++; return {newState: s} } })
+	let fn = jest.fn();
 	class myStateFulComponent extends MetaShadowComponent {
 		constructor() {
 			super(storage);
-			this.style = [];
+			this.styles = [];
 		}
 		render() {
 			this.content = Div({}, this.storage.getState().val);
-			return this.content;
+			return 'this.content';
 		}
 		handleStoreEvents() {
 			return {
-				'INCREMENT': () => {
-					this.content.innerHTML = this.storage.getState().val;
-				}
+				'INCREMENT': fn
 			}
 		}
 	}
-
-	DefineElement('statefulshadow-component', myStateFulComponent);
-	document.body.appendChild(StatefulshadowComponent());
-	const el = document.querySelector('statefulshadow-component > div');
-	expect(el.innerHTML).toEqual('1');
+	DefineElement('stateful-shadow', myStateFulComponent);
+	let el = StatefulShadow();
+	document.body.appendChild(el);
 	storage.dispatch({ type: 'INCREMENT' });
-	expect(el.innerHTML).toEqual('2');
+	expect(fn).toHaveBeenCalled();
 });
 
 test('MetaComponent and MetaShadow component addListeners', () => {
@@ -126,4 +119,19 @@ test('MetaComponent and MetaShadow component addListeners', () => {
 	expect(mcFn).toHaveBeenCalled();
 	expect(mscFn).toHaveBeenCalled();
 });
+
+
+test('MetaComponent and MetaShadowComponent throw error if render method is not defined',
+() => {
+	class errComponent extends MetaBase {
+		constructor() {
+			super();
+			this.render = false;
+		}
+	}
+	expect(() => {
+		new errComponent();
+	}).toThrow();
+})
+
 
