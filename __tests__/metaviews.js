@@ -2,7 +2,7 @@ import { MetaComponent } from '../lib/metaviews/meta-component';
 import { MetaShadowComponent } from '../lib/metaviews/meta-shadow-component';
 import {Div, DefineElement} from '../lib/customelements/ElementCreator';
 const Store = require('../lib/store');
-import metaBase, { MetaBase } from '../lib/metaviews/meta-base';
+import { MetaBase } from '../lib/metaviews/meta-base';
 
 let storage = null;
 
@@ -123,15 +123,64 @@ test('MetaComponent and MetaShadow component addListeners', () => {
 
 test('MetaComponent and MetaShadowComponent throw error if render method is not defined',
 () => {
-	class errComponent extends MetaBase {
+	let validator = null;
+	class errComponent extends MetaComponent {
 		constructor() {
 			super();
-			this.render = false;
+		}
+		ComponentDidFail(err) {
+			validator = err;
 		}
 	}
-	expect(() => {
-		new errComponent();
-	}).toThrow();
+	DefineElement('err-comp', errComponent);
+	document.body.ErrComp();
+	expect(validator).toBeInstanceOf(TypeError);
+});
+
+test('MetaComponent and MetashadowComponent throw error if handle store events is not defined',
+() => {
+	let validator = null;
+	class errComponent extends MetaComponent {
+		constructor() {
+			super(new Store({}, {}));
+		}
+		render() { return '' }
+		ComponentDidFail(err) {
+			validator = err;
+		}
+	}
+	DefineElement('error-comp', errComponent);
+	document.body.ErrorComp();
+	expect(validator).toBeInstanceOf(TypeError)
+});
+
+test('MetaComponent and MetashadowComponent throw error if ComponentDidFail() called but not overwritten',
+() => {
+	class errComponent extends MetaComponent {
+		constructor() {
+			super();
+		}
+		render() { return '' }
+	}
+	DefineElement('did-fail', errComponent);
+	const el = DidFail();
+	expect(() => {el.ComponentDidFail(new TypeError())}).toThrow();
+});
+
+test('MetaShadowComponent should have Links tags from the styles property', () => {
+	class shadowComp extends MetaShadowComponent {
+		constructor() {
+			super();
+			this.styles = [ './test.css' ];
+		}
+
+		render() {
+			return 'Hello world';
+		}
+	}
+	DefineElement('shadow-component', shadowComp);
+	document.body.ShadowComponent();
+	const el = document.querySelector('shadow-component').shadowRoot
+	const style = el.querySelector('style')
+	expect(style).toBeInstanceOf(HTMLStyleElement);
 })
-
-
