@@ -37,4 +37,4 @@ class MyComponent extends MetaComponent {
 		};
 	}
 }
-window.customElements.define('my-component', MyComponent);
+DefineElement('my-component', MyComponent);
