@@ -117,3 +117,23 @@ class MyComponent extends MetaCompoenent {
 		}
 	}
 ```
+
+### ComponentDidFail
+For the sake of debugging ```ComponentDidFail``` exists in the MetaComponent and MetaShadowComponent, it can be overwritten or called.
+```js
+class MyComponent extends MetaComponent {
+	constructor(customValue) {
+		if(!customValue) {
+			this.ComponentDidFail(new TypeError('customValue is needed on construct'))
+		}
+	}
+	render() {
+		...
+	}
+	ComponentDidFail(reason) {
+	   // Handle you errors here
+	  // If not overwritten by default will throw reason
+	}
+}
+```
+This is useful for handling errors from parent classes. 

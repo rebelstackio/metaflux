@@ -64,3 +64,23 @@ Div(false, SimpleCounter())
 // or use chaining
 Div().SimpleCounter()
 ```
+
+## Add new Life cycle function.
+For the sake of debugging add ```ComponentDidFail``` to the MetaComponent and MetaShadowComponent, it can be overwritten or called.
+```js
+class MyComponent extends MetaComponent {
+    constructor(customValue) {
+        if(!customValue) {
+            this.ComponentDidFail(new TypeError('customValue is needed on construct'))
+        }
+    }
+    render() {
+        ...
+    }
+    ComponentDidFail(reason) {
+       // Handle you errors here
+      // If not overwritten by default will throw reason
+    }
+}
+```
+This is useful for handling errors from parent classes.
