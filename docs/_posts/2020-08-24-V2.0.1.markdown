@@ -1,0 +1,66 @@
+---
+layout: blog
+title:  "Update V2.0.1"
+date:   2020-06-04 14:26:46 -0500
+categories: blog update
+---
+# V2.0.1
+## Fix onStoreEvent prototype
+In the previous version, onStoreEvents will return undefined due is a void function, this will break the chaining behavior.
+- update now will return the element that call the onStoreEvents and will have their prototype allowing to keep chaining as usual.
+
+```js
+Div().Button().onStoreEvent(...).baseNode()
+```
+## Create new function ```DefineElement()``` in replace of ```window.customElements.define()```
+it receives the same parameters and works the same but also will create a helper function to create your new component like the custom elements (Div, Span ...), the name from that element will be capitalized (my-component = MyComponent), this also will be created to the HTMLElement prototype so can be used with the Metaflux chaining
+```js
+import { MetaComponent, Div, Button, DefineElement } from '@rebelstack-io/metaflux';
+
+class Counter extends MetaComponent {
+	/**
+	 * MetaComponent constructor needs storage.
+	 */
+	constructor () {
+		super(global.storage);
+	}
+	// eslint-disable-next-line class-method-use-this
+	render () {
+		const content = Div({}, () => (
+			Button({
+				onclick: () => {
+					this.storage.dispatch({type: 'INCREMENT'});
+				}
+			}, 'Increase')
+		))
+		this.text = content.Div({}, this.storage.getState().Main.value)
+		content.Button({onclick: () => {
+			this.storage.dispatch({type: 'DECREMENT'});
+		}}, 'Decrese')
+		return content;
+	}
+
+	/**
+	 * Handle Events in an organized way.
+	 */
+	handleStoreEvents () {
+		return {
+			'INCREMENT': () => {
+				this.text.textContent = this.storage.getState().Main.value;
+			},
+			'DECREMENT': () => {
+				this.text.textContent = this.storage.getState().Main.value;
+			}
+		};
+	}
+}
+DefineElement('simple-counter', Counter);
+// the old way = window.customElements.define('simple-counter', Counter);
+```
+Now our Element is available in a function ```SimpleCounter(props, content)```
+we can define it as so
+```js
+Div(false, SimpleCounter())
+// or use chaining
+Div().SimpleCounter()
+```

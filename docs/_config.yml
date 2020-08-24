@@ -7,7 +7,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Metaflux Documentation
-email: osmarreyesst@gmai.com
+email: osmarreyesst@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   the flux pattern for any environment, flexible and friendly with vanilla javascript and web components.
   Metaflux is an open-source library providing tools that allow easy adoption of the flux (observable) pattern in your code which simplifies complex UI, easy debugging and unit-testing.
