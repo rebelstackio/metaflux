@@ -12,4 +12,7 @@ before_install:
 - npm update -g npm
 install:
 - npm install
+after_success:
+  - pip install --user codecov
+  - codecov --file coverage/lcov.info --disable search
 
