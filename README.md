@@ -1,7 +1,7 @@
 
 # ![metaflux logo](https://res.cloudinary.com/rebelstackio/image/upload/v1537996807/metaflux-logo_dpykyn.svg "metaflux logo") metaflux
 
-[![Build Status](https://travis-ci.org/rebelstackio/metaflux.svg?branch=develop)](https://travis-ci.org/rebelstackio/metaflux)
+[![Build Status](https://travis-ci.org/rebelstackio/metaflux.svg?branch=develop)](https://travis-ci.org/rebelstackio/metaflux) [![codecov.io](https://codecov.io/github/rebelstackio/metaflux/coverage.svg?branch=develop)](https://codecov.io/github/rebelstackio/metaflux?branch=develop)
 
 Simplifying the flux/redux pattern for vanilla (es6) javascript
 
