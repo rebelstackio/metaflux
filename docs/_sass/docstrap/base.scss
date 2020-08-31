@@ -101,6 +101,16 @@ body {
 		margin: 15px 0;
 		text-align: center;
 	}
+	& h1, h2, h3, h4, h5 {
+		margin: 15px 0;
+	}
+	& p {
+		margin: 5px 0;
+	}
+
+	& .highlight {
+		margin: 5px 0;
+	}
 }
 
 .sumary {
@@ -229,6 +239,8 @@ pretty-menu-item {
 		left: 0;
 		right: 0;
 		bottom: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	& .p-menu-item-box > div {
 		position: relative;

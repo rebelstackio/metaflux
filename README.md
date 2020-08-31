@@ -1,6 +1,8 @@
 
-
 # ![metaflux logo](https://res.cloudinary.com/rebelstackio/image/upload/v1537996807/metaflux-logo_dpykyn.svg "metaflux logo") metaflux
+
+[![Build Status](https://travis-ci.org/rebelstackio/metaflux.svg?branch=develop)](https://travis-ci.org/rebelstackio/metaflux)
+
 Simplifying the flux/redux pattern for vanilla (es6) javascript
 
 Metaflux is a lightweight library that provides a store to your application.
