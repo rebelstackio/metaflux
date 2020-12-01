@@ -8,7 +8,7 @@
 		"dist"
 	],
 	"scripts": {
-		"start": "./node_modules/.bin/webpack-dev-server  --mode development",
+		"start": "webpack serve",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"build": "npx webpack --config webpack.config.js"

@@ -43,11 +43,14 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['*', '.js'],
-		modules: ['node_modules', 'lib']
-	},
+		modules: ['node_modules', 'lib'],
+		fallback: {
+			fs: false
+		}
+	},/*
 	node: {
 		fs: 'empty'
-	},
+	},*/
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'test/browser_test/index.html'),
