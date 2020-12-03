@@ -1,6 +1,6 @@
 {
 	"name": "@rebelstack-io/metaflux",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Library supporting flux pattern without react",
 	"main": "dist/metaflux.js",
 	"unpkg": "dist/metaflux.js",

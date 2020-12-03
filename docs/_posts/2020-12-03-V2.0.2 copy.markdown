@@ -1,0 +1,12 @@
+---
+layout: blog
+title:  "Update V2.0.2"
+date:   2020-12-03 14:26:46 -0500
+categories: blog update
+---
+# V2.0.2
+## Fix onStoreEvent prototype
+Fix bug where elements that are not in the HTML tree keep listening to store events. This cause a major memory leak due to ghost elements that keeps updating even if they were removed.
+
+## Fix syntax issue with HTMLElementCreator.
+Yes, with a long name like that no wonder why is tedious to use the core of the custom elements, but the fact that you always have to pass empty props if you want an empty element doesn't really help, in this patch, the props parameters are no longer mandatory.
