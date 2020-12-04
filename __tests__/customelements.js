@@ -13,12 +13,21 @@ test('Base node Return top parent node', () => {
 	expect(el.id).toEqual('parent-el')
 });
 
-test('onStoreEvent expecto to be called', () => {
+test('onStoreEvent expect to be called', () => {
+	global.storage = new Store({val: 1}, { 'INCREMENT': (a, s) => { s.val++; return {newState: s} } })
+	const calleable = jest.fn();
+	const el = Button().onStoreEvent('INCREMENT', calleable)
+	document.body.appendChild(el);
+	global.storage.dispatch({type: 'INCREMENT'})
+	expect(calleable).toHaveBeenCalled();
+});
+
+test('onStoreEvent expect not to be called if el is not in the html tree', () => {
 	global.storage = new Store({val: 1}, { 'INCREMENT': (a, s) => { s.val++; return {newState: s} } })
 	const calleable = jest.fn();
 	const el = Button().onStoreEvent('INCREMENT', calleable)
 	global.storage.dispatch({type: 'INCREMENT'})
-	expect(calleable).toHaveBeenCalled();
+	expect(calleable).not.toHaveBeenCalled();
 });
 
 test('Events object in content should execute if defined', () => {

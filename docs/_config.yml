@@ -11,7 +11,7 @@ email: osmarreyesst@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   the flux pattern for any environment, flexible and friendly with vanilla javascript and web components.
   Metaflux is an open-source library providing tools that allow easy adoption of the flux (observable) pattern in your code which simplifies complex UI, easy debugging and unit-testing.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "/metaflux/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
