@@ -184,3 +184,29 @@ test('MetaShadowComponent should have Links tags from the styles property', () =
 	const style = el.querySelector('style')
 	expect(style).toBeInstanceOf(HTMLStyleElement);
 })
+
+test('MetaBase should remove store listener on Component Dismount', () => {
+	storage = new Store({val: 1}, { 'INCREMENT': (a, s) => { s.val++; return {newState: s} } })
+	let fn = jest.fn();
+	class rmComponent extends MetaComponent {
+		constructor() {
+			super(storage);
+			this.styles = [];
+		}
+		render() {
+			this.content = Div({}, this.storage.getState().val);
+			return 'this.content';
+		}
+		handleStoreEvents() {
+			return {
+				'INCREMENT': fn
+			}
+		}
+	}
+	DefineElement('rm-component', rmComponent);
+	let el = RmComponent();
+	document.body.appendChild(el);
+	document.body.removeChild(el);
+	storage.dispatch({ type: 'INCREMENT' });
+	expect(fn).not.toHaveBeenCalled();
+});
