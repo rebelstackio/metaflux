@@ -10,3 +10,8 @@ Fix bug where elements that are not in the HTML tree keep listening to store eve
 
 ## Fix syntax issue with HTMLElementCreator.
 Yes, with a long name like that no wonder why is tedious to use the core of the custom elements, but the fact that you always have to pass empty props if you want an empty element doesn't really help, in this patch, the props parameters are no longer mandatory.
+
+## Fix handleStoreEvents in Class components
+Fix an issue where the listeners will keep existing even if the elements were removed from the DOM.
+Now the listeners are removed ```onDisconectedCallback```.
+

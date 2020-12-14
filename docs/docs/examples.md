@@ -122,7 +122,7 @@ window.customElements.define('sort-table', SortTable);
 // get container element
 const _cont = document.querySelector('#container');
 // create new table
-const _table = document.createElement('sort-table');
+const _table = HTMLElementCreator('sort-table');
 // append it to the container
 _cont.appendChild(_table);
 ```
