@@ -38,7 +38,7 @@ global.storage.dispatch({ type: 'EVENT_NAME', ... })
 })
 ```
 
-## MetaCompoents
+## MetaComponents
 ### render
 - render is a method that you should override, is mandatory to have it in your class component
 - should return a String or HTMLElement
@@ -137,3 +137,151 @@ class MyComponent extends MetaComponent {
 }
 ```
 This is useful for handling errors from parent classes. 
+
+
+## Element Construction
+Metaflux supports most standard elements with easy constructors:
+```javascript
+var mydiv = Div();
+```
+
+### Chaining constructors
+```javascript
+var myelegrp = Div().Div().Span('Hello');
+console.log(myelegrp);  // references final element
+// <span>Hello</span>
+
+console.log(myelegrp.baseNode()); // baseNode() references top of chain
+// <div><div><span>Hello</span></div></div>
+```
+
+### Importing Element Constructors
+```
+import { Div, H1, A } from '@rebelstack-io/metaflux';
+```
+
+### ElementConstructor
+*constructor*( textContent )
+```javascript
+var mydiv = Div('<h1>Hello</h1>');
+console.log(mydiv); // <div><h1>Hello</h1></div>
+
+var yourdiv = Div('hello');
+console.log(yourdiv); // <div>hello</div>
+```
+
+*constructor*( objProps, textContent )
+```javascript
+var ahref = A({href:"#"},'anchor text');
+console.log(ahref); // <a href="#">anchor text</a>
+```
+
+### Supported Element Constructors
+
+- *Standard HTML*
+	- `H1`()
+	- `H2`()
+	- `H3`()
+	- `H4`()
+	- `H5`()
+	- `H6`()
+	- `Div`()
+	- `Span`()
+	- `Ol`()
+	- `Ul`()
+	- `Li`()
+	- `Table`()
+	- `Thead`()
+	- `Tbody`()
+	- `Tfoot`()
+	- `Tr`()
+	- `Td`()
+	- `Th`()
+	- `Form`()
+	- `Label`()
+	- `Input`()
+	- `TextArea`()
+	- `Button`()
+	- `Img`()
+	- `Picture`()
+	- `Source`()
+	- `Select`()
+	- `Option`()
+	- `P`()
+	- `A`()
+	- `Section`()
+	- `Video`()
+
+- *SVG*
+	- `SVG`()
+	- `Element`()
+	- `A`()
+	- `Animation`()
+	- `Animate`()
+	- `AnimateMotion`()
+	- `AnimateTransform`()
+	- `Circle`()
+	- `ClipPath`()
+	- `ComponentTransferFunction`()
+	- `Cursor`()
+	- `Defs`()
+	- `Desc`()
+	- `Ellipse`()
+	- `FEBlend`()
+	- `FEColorMatrix`()
+	- `FEComponentTransfer`()
+	- `FEComposite`()
+	- `FEConvolveMatrix`()
+	- `FEDiffuseLighting`()
+	- `FEDisplacementMap`()
+	- `FEDistantLight`()
+	- `FEDropShadow`()
+	- `FEFlood`()
+	- `FEFuncA`()
+	- `FEFuncB`()
+	- `FEFuncG`()
+	- `FEFuncR`()
+	- `FEGaussianBlur`()
+	- `FEImage`()
+	- `FEMerge`()
+	- `FEMergeNode`()
+	- `FEMorphology`()
+	- `FEOffset`()
+	- `FEPointLight`()
+	- `FESpecularLighting`()
+	- `FESpotLight`()
+	- `FETile`()
+	- `FETurbulence`()
+	- `Filter`()
+	- `FilterPrimitiveStandardAtt`()
+	- `ForeignObject`()
+	- `G`()
+	- `Geometry`()
+	- `Gradient`()
+	- `Graphics`()
+	- `Image`()
+	- `LinearGradient`()
+	- `Line`()
+	- `Mask`()
+	- `Metadata`()
+	- `MPath`()
+	- `Path`()
+	- `Pattern`()
+	- `Polyline`()
+	- `Polygon`()
+	- `RadialGradient`()
+	- `Rect`()
+	- `Script`()
+	- `Set`()
+	- `Stop`()
+	- `Style`()
+	- `Switch`()
+	- `Symbol`()
+	- `TextContent`()
+	- `Text`()
+	- `TextPath`()
+	- `TextPositioning`()
+	- `Title`()
+	- `TSpan`()
+	- `Use`()
+	- `View`()

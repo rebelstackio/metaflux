@@ -78,3 +78,9 @@ test('Custom element content can be instance of HTMLElement, Function or array',
 	const htmlArray = Div({}, [Div(), Div()]);
 	expect(htmlArray.childElementCount).toEqual(2)
 })
+
+test('Custom element props can be instance of String and act like content', () => {
+	const htmlElement = Div(`<span>test</span>`);
+	const text = htmlElement.querySelector('span').innerHTML;
+	expect(text).toEqual('test');
+})
