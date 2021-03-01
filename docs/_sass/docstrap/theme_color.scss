@@ -53,4 +53,79 @@
 	}
 }
 /*</fuchsia>*/
+/*<METAFLUX custom theme>*/
+.docs-theme-metaflux{
+	& .wrapper {
+		margin-top: 0;
+		/*padding-top: 101px;*/
+	}
+	& .main-content {
+		padding: 0;
+	}
+	
+	& .sumary {
+		/*grid-template-columns: .5fr 1fr;*/
+		padding: 10px 5em;
+    	position: relative;
+		/*temp*/
+		background: url('/metaflux/assets/img/banner/banner-metaflux.jpg');
+		padding-bottom: 100px;
+		padding-top: 101px;
+		> div {
+			place-self: center;
+			display: grid;
+			position: relative;
+			> pretty-button {
+				/*margin-top: 20px;*/
+				font-size: 20px;
+				position: absolute;
+				bottom: -60px;
+				left: 10px;
+				z-index: 3;
+				> button {
+					background: rgba($color: #3a006a, $alpha: .5);
+					color: #fff !important;
+					border-color: #3a006a !important;
+					border-radius: 0;
+				}
+			}
+			> p {
+				font-size: 20px;
+				color: #fff;
+			}
+			> h1 {
+				font-size: 46px;
+				color: #fff;
+			}
+		}
+		> img {
+			width: 24em;
+			position: absolute;
+			right: 100px;
+			bottom: -10px;
+			z-index: 3;
+		}
+		> svg {
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+		}
+	}
+	/*------*/
+	& .main-header {
+		background: transparent !important;
+	}
+	& .sumary pretty-button * {
+		color: $fuchsia-color-light !important;
+		border-color: $fuchsia-color-light !important;
+		&:hover {
+			color: $fuchsia-color !important;
+			border-color: $fuchsia-color !important;
+		}
+	}
+	& .benefits .porperty > svg {
+		color: $fuchsia-color !important
+	}
+}
+/*<METAFLUX custom theme>*/
 /*---------------------------END-THEMES-------------------------------*/
