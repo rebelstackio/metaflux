@@ -1,6 +1,6 @@
 html, body {
 	font-family: 'Roboto', sans-serif;
-	background-color: $clear-color;
+	background-color: #fff;
 	margin: 0;
 	padding: 0;
 	height: 100%
@@ -148,7 +148,7 @@ body {
 	display: grid;
 	grid-auto-flow: column;
 	column-gap: 10px;
-	background-color: rgba(252, 250, 226,.5);
+	background-color: #fff;
 	text-align: justify;
 	padding: 0 15px;
 	& > * {

@@ -3,26 +3,59 @@ layout: default
 ---
 
 <div class="home">
-  <div class="main-content">
-    <div class="sumary">
-      <div>
-        <h1>The Flux Pattern For Any Environment.</h1>
-        <p>
-          {{site.description}}
-        </p>
-        <pretty-button size="large" href="{{'/docs/overview/' | relative_url}}" value="Get Started"></pretty-button>
-      </div>
-      <img src="{{site.darklogo | relative_url}}" alt="default-logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FFFFFF" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,309.3C960,309,1200,299,1320,293.3L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
-    </div>
-    <div class="benefits">
-      {{site.benefits}}
-    </div>
-    <div class="related">
-      <h3>Other libraries well-siuted with {{site.name}}</h3>
-      <div class="related-links">
-        {{site.links}}
-      </div>
-    </div>
-  </div>
+	<div class="main-content">
+		<!-- BANNER -->
+		<div class="sumary">
+			<div>
+				<h1>The Flux Pattern For Any Environment.</h1>
+				<p>
+					{{site.description}}
+				</p>
+				<!--
+					<pretty-button size="large" href="{{'/docs/overview/' | relative_url}}" value="Get Started"></pretty-button>
+				-->
+				<button class="d-pretty-button">
+					Get Started
+					<!-- TODO: UPDATE TEMP ICON -->
+					<i class="fas fa-arrow-right"></i>
+				</button>
+			</div>
+			<img src="{{site.darklogo | relative_url}}" alt="default-logo">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FFFFFF" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,309.3C960,309,1200,299,1320,293.3L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+		</div>
+		<!-- small text in the middle -->
+		<div class="fill">
+			<h1>Metaflux</h1>
+			<p>Includes simple and elegant element constructors for quickly designing even complex HTML web components with flux support already baked in.</p>
+		</div>
+
+		<div class="benefits">
+			<!-- the thingy in the left -->
+			<div class="graphic">
+				<img src="{{site.graph | relative_url}}" alt="" srcset="">
+			</div>
+			<div class="props">
+				{{site.benefits}}
+			</div>
+		</div>
+		<!--
+		<div class="related">
+			<h3>Other libraries well-siuted with {{site.name}}</h3>
+			<div class="related-links">
+				{{site.links}}
+			</div>
+		</div>
+		-->
+	</div>
 </div>
+<script>
+	window.addEventListener('scroll', (e) => {
+		const y = window.scrollY;
+		const header = document.querySelector('.main-header');
+		if (y > 55) {
+			header.classList.add('scrolled');
+		} else {
+			header.classList.remove('scrolled');
+		}
+	})
+</script>

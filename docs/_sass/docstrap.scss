@@ -16,6 +16,15 @@ $fuchsia-color: #e91e63;
 $fuchsia-color-light: rgba(233, 30, 99, .5);
 /* dark theme*/
 
+/* Metaflux theme */
+$dark-purlple: #220042;
+$light-purlple: #3a006a;
+$dark-grey: #1d2a3b;
+$fuchsia: #c756e2;
+$turquoise: #00ffff;
+$gradient: linear-gradient(#{$turquoise}, #{$fuchsia}, #{$light-purlple});
+
+/*---------------------*/
 $dark-color: #333333;
 $custom-blue: #00a4df;
 $custom-red: #f56954;

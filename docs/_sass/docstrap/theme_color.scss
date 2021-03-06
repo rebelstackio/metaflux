@@ -75,18 +75,31 @@
 			place-self: center;
 			display: grid;
 			position: relative;
-			> pretty-button {
+			> .d-pretty-button {
 				/*margin-top: 20px;*/
 				font-size: 20px;
 				position: absolute;
 				bottom: -60px;
 				left: 10px;
 				z-index: 3;
-				> button {
-					background: rgba($color: #3a006a, $alpha: .5);
-					color: #fff !important;
-					border-color: #3a006a !important;
-					border-radius: 0;
+				height: 40px;
+    			padding: 0 15px;
+				background: rgba($color: $light-purlple, $alpha: .5);
+				color: #fff !important;
+				border-color: $light-purlple !important;
+				border-radius: 0;
+				touch-action: manipulation;
+				white-space: nowrap;
+				border-radius: 4px;
+				outline: none;
+				border: 1px solid;
+				cursor: pointer;
+				display: grid;
+				grid-auto-flow: column;
+				column-gap: 10px;
+				align-items: center;
+				&:hover {
+					background: $dark-purlple !important;
 				}
 			}
 			> p {
@@ -113,19 +126,60 @@
 	}
 	/*------*/
 	& .main-header {
+		grid-template-columns: 2fr 4fr 1fr !important;
 		background: transparent !important;
-	}
-	& .sumary pretty-button * {
-		color: $fuchsia-color-light !important;
-		border-color: $fuchsia-color-light !important;
-		&:hover {
-			color: $fuchsia-color !important;
-			border-color: $fuchsia-color !important;
+		transition: all .3s linear;
+		& .item.active {
+			color: $fuchsia !important;
+			&::after {
+				border-color: $fuchsia !important;
+			}
+		}
+		& .items {
+			place-self: center;
+		}
+		&.scrolled {
+			background: #000 !important;
+		}
+		& > .logo {
+			display: grid;
+			grid-auto-flow: column;
+			margin-left: 50px;
+			> .logotipo {
+				height: 2em;
+				width: auto;
+			}
 		}
 	}
-	& .benefits .porperty > svg {
-		color: $fuchsia-color !important
+	& .fill {
+		margin: 50px 0;
+		text-align: center;
+		max-width: 50%;
+		place-self: center;
+		> h1 {
+			font-size: 32px;
+		}
+		> p {
+			font-size: 17px;
+		}
 	}
+	& .benefits {
+		& > .props {
+			> .porperty {
+				display: grid;
+				grid-auto-flow: column;
+				column-gap: 1em;
+				padding: 0 2em;
+				> img {
+					width: 8em;
+				}
+			}
+		}
+		& > .graphic > img {
+			width: 40vw;
+		}
+	}
+
 }
-/*<METAFLUX custom theme>*/
+/*</METAFLUX custom theme>*/
 /*---------------------------END-THEMES-------------------------------*/
