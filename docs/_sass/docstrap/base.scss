@@ -195,6 +195,7 @@ body {
 	margin-top: 101px;
 	overflow-y: auto;
 	position: relative;
+	margin-bottom: 450px;
 }
 
 /*-----------------FOOTER-----------------*/
@@ -288,6 +289,9 @@ pretty-menu::after {
 /*-------------------- DOCS CONTENT ------------------*/
 .md-content {
 	margin-left: 250px;
+	margin-top: 98px;
+	padding: 57px;
+	background: $dark-grey;
 	& ul {
 		padding-left: 20px;
 	}

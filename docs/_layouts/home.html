@@ -53,9 +53,13 @@ layout: default
 		const y = window.scrollY;
 		const header = document.querySelector('.main-header');
 		if (y > 55) {
-			header.classList.add('scrolled');
+			header.classList.remove('transparent');
 		} else {
-			header.classList.remove('scrolled');
+			header.classList.add('transparent');
 		}
+	});
+	window.addEventListener('DOMContentLoaded', () => {
+		const header = document.querySelector('.main-header');
+		header.classList.add('transparent')
 	})
 </script>
