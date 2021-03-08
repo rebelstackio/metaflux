@@ -200,30 +200,65 @@ body {
 /*-----------------FOOTER-----------------*/
 .footer {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	background-color: #d9d9d9;
+	grid-template-columns: 1fr 1fr;
+	background-color: $dark-grey;
 	position: absolute;
 	bottom: 0;
 	place-content: center;
-	padding: 10px;
+	padding: 10px 8em;
 	left: 0;
 	right: 0;
-	column-gap: 10px;
-	& img {
+	column-gap: 8em;
+	& > .footer-content{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		& h4 {
+			margin: 45PX 0;
+			color: #fff;
+		}
+		& a {
+			margin-bottom: 45px;
+			color: rgba($color: #fff, $alpha: .5);
+		}
+		> div {
+			grid-template-rows: repeat(4, 1fr);
+		}
+	}
+	& > .footer-info {
+		> img.main-logo {
+			margin: 45px 0;
+			width: 4.5em;
+		}
+		> p {
+			margin-bottom: 27px;
+			color: rgba($color: #fff, $alpha: .5);
+		}
+		> img.logo-tipo{
+			height: 11px;
+			margin-bottom: 27px;
+		}
+		> .socials {
+			display: grid;
+			grid-auto-flow: column;
+			column-gap: 40px;
+			font-size: 2em;
+		}
+	}
+	/*& img {
 		grid-area: 2 / 2;
 		width: 5em;
 		place-self: center;
-	}
+	}*/
 	& div {
 		display: grid;
-		place-self: center;
+		/*place-self: center;*/
 	}
 	& a {
 		text-decoration: none;
-		color: var(--primary-bg);
+		color: #fff;
 		transition: all .3s ease;
 		&:hover {
-			color: var(--primary-bg-hv);
+			color: ghostwhite;
 		}
 	}
 }
