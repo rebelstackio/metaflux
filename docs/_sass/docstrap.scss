@@ -29,6 +29,7 @@ $header-color: #232323;
 $code-string: #0de3e5;
 $code-bg: #2a3749;
 $code-obj: #df3c4e;
+$code-bool: #364ede;
 /*---------------------*/
 $dark-color: #333333;
 $custom-blue: #00a4df;
@@ -90,5 +91,6 @@ $custom-red: #f56954;
 @import
   "docstrap/base",
   "docstrap/theme_color.scss",
-  "docstrap/sidebar.scss"
+  "docstrap/sidebar.scss",
+  "docstrap/docs.scss"
 ;

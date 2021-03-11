@@ -1,0 +1,113 @@
+/*-------------------- DOCS CONTENT ------------------*/
+.md-content {
+	margin-left: 250px;
+	margin-top: 98px;
+	padding: 57px;
+	background: $dark-grey;
+	& ul {
+		padding-left: 20px;
+		color: rgba($color: #fff, $alpha: .5);
+		font-style: italic;
+		padding: 10px 72px;
+	}
+	&.no-menu {
+		margin-left: 0;
+	}
+	& a {
+		color: rgba($color:$fuchsia, $alpha: .5);
+	}
+	& .doc-block {
+		background-color: $grey-blue;
+		display: grid;
+		align-items: center;
+		margin-top: 33px;
+		> h4 {
+			padding: 25px 30px;
+			margin: 0;
+			border-bottom: 1px solid $dark-grey;
+		}
+		> h3 {
+			padding: 25px 30px;
+			margin: 0;
+		}
+		> h5 {
+			color: rgba($color: #fff, $alpha: .5) !important;
+			padding: 0px 30px;
+			margin: 0;
+			font-size: 1.17em;
+		}
+		> p {
+			padding: 0px 55px;
+			margin: 10px 0px !important;
+		}
+		& em {
+			color: rgba($color: #fff, $alpha: .5) !important;
+		}
+		> .highlighter-rouge {
+			padding: 30px 50px;
+			& .highlight {
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					background-color: $fuchsia;
+					top: 0;
+					bottom: 0;
+					width: 10px;
+					left: -10px;
+				}
+			}
+		}
+	}
+	& .doc-text-wrapper {
+		padding-left: 57px;
+		text-align: justify;
+	}
+	& .break-line {
+		height: 1px;
+		background-color: $dark-grey;
+		margin-bottom: 30px;
+	}
+	& p {
+		margin: 0 !important;
+	}
+}
+
+.article-date {
+	padding: 10px 15px;
+	color: #666;
+	font-style: italic;
+}
+
+main.page-content {
+	position: relative;
+}
+
+code.highlighter-rouge {
+	padding: 0 5px;
+	background-color: #282c34;
+	margin: 5px;
+	color: #fff;
+}
+
+
+/* code styles */
+
+.hljs-string {
+	color: $code-string !important;
+	> * {
+		color: $code-string !important;
+	}
+}
+
+.hljs-attr, .hljs-number {
+	color: $code-obj !important;
+}
+
+.hljs {
+	background: $code-bg !important;
+}
+
+.hljs-literal {
+	color: #364ede !important;
+}
