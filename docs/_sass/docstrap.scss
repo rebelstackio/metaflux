@@ -25,6 +25,10 @@ $turquoise: #00ffff;
 $gradient: linear-gradient(#{$turquoise}, #{$fuchsia}, #{$light-purlple});
 $grey-blue: #39465c;
 $header-color: #232323;
+
+$code-string: #0de3e5;
+$code-bg: #2a3749;
+$code-obj: #df3c4e;
 /*---------------------*/
 $dark-color: #333333;
 $custom-blue: #00a4df;
@@ -85,5 +89,6 @@ $custom-red: #f56954;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import
   "docstrap/base",
-  "docstrap/theme_color.scss"
+  "docstrap/theme_color.scss",
+  "docstrap/sidebar.scss"
 ;
