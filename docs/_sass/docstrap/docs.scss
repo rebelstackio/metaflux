@@ -45,18 +45,6 @@
 		}
 		> .highlighter-rouge {
 			padding: 30px 50px;
-			& .highlight {
-				position: relative;
-				&::before {
-					content: '';
-					position: absolute;
-					background-color: $fuchsia;
-					top: 0;
-					bottom: 0;
-					width: 10px;
-					left: -10px;
-				}
-			}
 		}
 	}
 	& .doc-text-wrapper {
@@ -70,6 +58,52 @@
 	}
 	& p {
 		margin: 0 !important;
+	}
+	/* this is FAQ view see tabindex on any docs .md files*/
+	&.n-4 {
+		background-color: #fff;
+		padding: 0;
+		
+		> ul {
+			margin: 57px;
+			border: 1px solid $light-grey;
+			list-style: none;
+			padding: 0;
+			& h4 {
+				color: $header-color !important;
+				border-bottom: 1px solid $light-grey;
+				margin: 0;
+				padding: 15px 36px;
+			}
+			> li {
+				color: $header-color !important;
+				> ul {
+					list-style: none;
+					border-bottom: 1px solid $light-grey;
+				}
+				& li {
+					color: $light-grey !important;
+					min-height: 106px;
+					display: grid;
+					align-content: center;
+					grid-auto-flow: column;
+					& .highlighter-rouge {
+						grid-area: 2;
+					}
+				}
+			}
+		}
+	}
+	> .faq-banner {
+		background: url(/metaflux/assets/img/banner/banner-metaflux.jpg);
+		height: 456px;
+		display: grid;
+		position: relative;
+		place-content: center;
+		> svg {
+			position: absolute;
+			bottom: 0;
+		}
 	}
 }
 
@@ -110,4 +144,19 @@ code.highlighter-rouge {
 
 .hljs-literal {
 	color: #364ede !important;
+}
+
+.highlighter-rouge {
+	& .highlight {
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: $fuchsia;
+			top: 0;
+			bottom: 0;
+			width: 10px;
+			left: -10px;
+		}
+	}
 }
