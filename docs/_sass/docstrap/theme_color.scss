@@ -64,13 +64,13 @@
 	}
 	
 	& .sumary {
-		/*grid-template-columns: .5fr 1fr;*/
 		padding: 10px 5em;
-    	position: relative;
-		/*temp*/
+		position: relative;
 		background: url('/metaflux/assets/img/banner/banner-metaflux.jpg');
 		padding-bottom: 100px;
 		padding-top: 101px;
+		background-position: center;
+		background-size: cover;
 		> div {
 			place-self: center;
 			display: grid;
