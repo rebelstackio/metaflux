@@ -140,7 +140,7 @@
 	}
 }
 /* Banners */
-.faq-banner, .community-banner {
+.faq-banner, .community-banner, .blog-banner {
 	background: url(/metaflux/assets/img/banner/banner-metaflux.jpg);
 	height: 456px;
 	display: grid;
@@ -152,6 +152,9 @@
 	> svg {
 		position: absolute;
 		bottom: 0;
+	}
+	> p {
+		padding: 0 10em;
 	}
 }
 

@@ -91,10 +91,11 @@ $custom-red: #f56954;
 
 
 /* import other sass files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 @import
   "docstrap/base",
   "docstrap/theme_color.scss",
   "docstrap/sidebar.scss",
-  "docstrap/docs.scss"
+  "docstrap/docs.scss",
+  "docstrap/blog.scss"
 ;

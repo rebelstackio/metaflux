@@ -1,5 +1,5 @@
 html, body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Lato', sans-serif;
 	background-color: #fff;
 	margin: 0;
 	padding: 0;
@@ -74,10 +74,11 @@ body {
 			cursor: pointer;
 		}
 		& > a {
-			color: #fff;
+			color: rgba($color: #fff, $alpha: .5);
 			font-size: 28px;
+			transition: all .3s linear;
 			&:hover {
-				color: rgba(255,255,255,.6);
+				color: #fff;
 			}
 		}
 	}

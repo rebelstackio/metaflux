@@ -3,6 +3,9 @@ layout: blog
 title:  "Update V2.0.1"
 date:   2020-06-04 14:26:46 -0500
 categories: blog update
+logo: /metaflux/assets/img/old-logo-white.svg
+color: "#383838"
+description: "In this minor version, we updated some minor bugs, add consistency and improve syntax."
 ---
 # V2.0.1
 ## Fix onStoreEvent prototype

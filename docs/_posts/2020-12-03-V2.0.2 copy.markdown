@@ -1,8 +1,11 @@
 ---
 layout: blog
-title:  "Update V2.0.2"
-date:   2020-12-03 14:26:46 -0500
+title: "Update V2.0.2"
+date: 2020-12-03 14:26:46 -0500
 categories: blog update
+logo: /metaflux/assets/img/isotipo-m.svg
+color: "#1d2a3b"
+description: "Solve issue with memory leaks, now it is more consistent with the use of the JavaScript resources"
 ---
 # V2.0.2
 ## Fix onStoreEvent prototype

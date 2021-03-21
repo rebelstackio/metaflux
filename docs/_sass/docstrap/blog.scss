@@ -1,0 +1,39 @@
+
+.blog-init {
+	padding: 160px;
+	> .posts {
+		display: grid;
+		row-gap: 50px;
+		> .item {
+			display: grid;
+			grid-template-columns: .5fr 1fr;
+			> .logo {
+				display: grid;
+				place-content: center;
+				border-radius: 4px;
+				> img {
+					width: 6em;
+				}
+			}
+			> .content {
+				background-color: #fff;
+				padding: 71px 36px;
+				position: relative;
+				> h3, p {
+					color: $header-color
+				}
+				> a {
+					position: absolute;
+					bottom: 10px;
+					> * {
+						color: rgba($color: $fuchsia, $alpha: .5);
+						transition: all .3s linear;
+						&:hover {
+							color: $fuchsia;
+						}
+					}
+				}
+			}
+		}
+	}
+}
