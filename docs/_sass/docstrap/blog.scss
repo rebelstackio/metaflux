@@ -1,12 +1,23 @@
+.md-content.no-menu.white {
+	background-color: #fff;
+}
+
 
 .blog-init {
-	padding: 160px;
+	padding: 160px 100px;
+	display: grid;
+	grid-template-columns: 1fr .5fr;
+	column-gap: 50px;
+	& h3, p, h4 {
+		color: $header-color
+	}
 	> .posts {
 		display: grid;
 		row-gap: 50px;
 		> .item {
 			display: grid;
 			grid-template-columns: .5fr 1fr;
+			box-shadow: 0px 6px 47px 3px rgba(37,37,37, .05);
 			> .logo {
 				display: grid;
 				place-content: center;
@@ -19,21 +30,82 @@
 				background-color: #fff;
 				padding: 71px 36px;
 				position: relative;
-				> h3, p {
-					color: $header-color
-				}
 				> a {
 					position: absolute;
 					bottom: 10px;
-					> * {
-						color: rgba($color: $fuchsia, $alpha: .5);
-						transition: all .3s linear;
-						&:hover {
-							color: $fuchsia;
-						}
-					}
 				}
 			}
 		}
+	}
+	> .more {
+		display: grid;
+		row-gap: 65px;
+		> .faq {
+			box-shadow: 0px 6px 47px 3px rgba(37,37,37, .05);
+			height: fit-content;
+			> h3 {
+				margin-bottom: 40px;
+			}
+			& .item {
+				&:nth-child(3) {
+					margin: 32px 0;
+				}
+				display: grid;
+				grid-template-columns: .3fr 1fr;
+				column-gap: 36px;
+			}
+			& a > h4 {
+				margin-top: 40px;
+			}
+		}
+		> .socials {
+			box-shadow: 0px 6px 47px 3px rgba(37,37,37, .05);
+			height: fit-content;
+			> h3 {
+				margin-bottom: 40px;
+			}
+			& .item {
+				display: grid;
+				grid-template-columns: .3fr 1fr;
+				column-gap: 36px;
+				& svg {
+					place-self: center;
+					font-size: 4em;
+				}
+				&:nth-child(3) {
+					margin: 32px 0;
+				}
+			}
+		}
+	}
+	& a > * {
+		color: rgba($color: $fuchsia, $alpha: .5);
+		transition: all .3s linear;
+		&:hover {
+			color: $fuchsia;
+		}
+	}
+	
+}
+
+.bottom-banner {
+	background: url(/metaflux/assets/img/banner/banner-blog.jpg);
+	background-position: center;
+	background-size: contain;
+	position: relative;
+	margin: 0 110px;
+	border-radius: 4px;
+	padding: 182px 60px 55px 60px;
+	> .logo {
+		width: 160px;
+		height: 160px;
+		box-shadow: 0px 6px 47px 3px rgba(37,37,37, .05);
+		position: absolute;
+		top: -80px;
+		background-color: #fff;
+		box-sizing: border-box;
+		padding: 2em;
+		border-radius: 50%;
+		left: calc(50% - 80px);
 	}
 }
