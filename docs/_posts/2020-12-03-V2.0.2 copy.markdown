@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: blog_entry
 title: "Update V2.0.2"
 date: 2020-12-03 14:26:46 -0500
 categories: blog update
@@ -7,6 +7,8 @@ logo: /metaflux/assets/img/isotipo-m.svg
 color: "#1d2a3b"
 description: "Solve issue with memory leaks, now it is more consistent with the use of the JavaScript resources"
 ---
+{::options parse_block_html="true" /}
+<div class="doc-text-wrapper">
 # V2.0.2
 ## Fix onStoreEvent prototype
 Fix bug where elements that are not in the HTML tree keep listening to store events. This cause a major memory leak due to ghost elements that keeps updating even if they were removed.
@@ -17,4 +19,4 @@ Yes, with a long name like that no wonder why is tedious to use the core of the 
 ## Fix handleStoreEvents in Class components
 Fix an issue where the listeners will keep existing even if the elements were removed from the DOM.
 Now the listeners are removed ```onDisconectedCallback```.
-
+</div>

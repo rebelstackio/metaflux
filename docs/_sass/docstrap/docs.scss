@@ -92,7 +92,7 @@
 		}
 	}
 	& .doc-text-wrapper {
-		padding-left: 57px;
+		padding: 0 57px;
 		text-align: justify;
 	}
 	& .break-line {
@@ -211,3 +211,18 @@ code.highlighter-rouge {
 		}
 	}
 }
+/*
+code.language-HTML {
+	& .highlight {
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: $fuchsia;
+			top: 0;
+			bottom: 0;
+			width: 10px;
+			left: -10px;
+		}
+	}
+}*/
