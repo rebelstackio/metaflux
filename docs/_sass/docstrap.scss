@@ -16,6 +16,25 @@ $fuchsia-color: #e91e63;
 $fuchsia-color-light: rgba(233, 30, 99, .5);
 /* dark theme*/
 
+/* Metaflux theme */
+$dark-purlple: #220042;
+$light-purlple: #3a006a;
+$dark-grey: #1d2a3b;
+$fuchsia: #c756e2;
+$turquoise: #00ffff;
+$gradient: linear-gradient(#{$turquoise}, #{$fuchsia}, #{$light-purlple});
+$grey-blue: #39465c;
+$header-color: #232323;
+$light-grey: #808087;
+$discord-blue: #5a5aff;
+$github-grey: #383838;
+$stackoverflow-yellow: #f9d53d;
+
+$code-string: #0de3e5;
+$code-bg: #2a3749;
+$code-obj: #df3c4e;
+$code-bool: #364ede;
+/*---------------------*/
 $dark-color: #333333;
 $custom-blue: #00a4df;
 $custom-red: #f56954;
@@ -72,8 +91,11 @@ $custom-red: #f56954;
 
 
 /* import other sass files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 @import
   "docstrap/base",
-  "docstrap/theme_color.scss"
+  "docstrap/theme_color.scss",
+  "docstrap/sidebar.scss",
+  "docstrap/docs.scss",
+  "docstrap/blog.scss"
 ;

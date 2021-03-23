@@ -1,0 +1,13 @@
+pretty-menu {
+	& a {
+		color: $fuchsia !important;
+	}
+
+	& .p-menu-item-box.selected {
+		background-color: rgba($color: $fuchsia, $alpha: .1) !important;
+		&::after {
+			right: unset !important;
+			border-color: $fuchsia !important;
+		}
+	}
+}

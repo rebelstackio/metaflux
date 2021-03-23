@@ -1,0 +1,228 @@
+/*-------------------- DOCS CONTENT ------------------*/
+.md-content {
+	margin-left: 250px;
+	margin-top: 98px;
+	padding: 57px;
+	background: $dark-grey;
+	& ul {
+		padding-left: 20px;
+		color: rgba($color: #fff, $alpha: .5);
+		font-style: italic;
+		padding: 10px 72px;
+	}
+	&.no-menu {
+		margin: 0;
+		padding: 0;
+		background: #f9f9f9;
+		> .socials.big {
+			display: grid;
+			place-items: center;
+			padding: 160px;
+			row-gap: 50px;
+			& p, h3, h2, h1 {
+				color: $header-color;
+			}
+			> .social-item {
+				background-color: #fff;
+				display: grid;
+				grid-template-columns: .5fr 1fr;
+				width: 100%;
+				border-radius: 4px;
+				overflow: hidden;
+				> .icon {
+					display: grid;
+					place-content: center;
+					font-size: 8em;
+					> * {
+						color: #fff;
+					}
+					&.discord {
+						background-color: $discord-blue;
+					}
+					&.github {
+						background-color: $github-grey;
+					}
+					&.stackoverflow {
+						background-color: $stackoverflow-yellow;
+					}
+				}
+				> .description {
+					padding: 71px 36px;
+				}
+			}
+		}
+	}
+	& a {
+		color: rgba($color:$fuchsia, $alpha: .5);
+		text-decoration: none;
+		transition: all .3s linear;
+		&:hover {
+			color: $fuchsia;
+		}
+	}
+	& .doc-block {
+		background-color: $grey-blue;
+		display: grid;
+		align-items: center;
+		margin-top: 33px;
+		> h4 {
+			padding: 25px 30px;
+			margin: 0;
+			border-bottom: 1px solid $dark-grey;
+		}
+		> h3 {
+			padding: 25px 30px;
+			margin: 0;
+		}
+		> h5 {
+			color: rgba($color: #fff, $alpha: .5) !important;
+			padding: 0px 30px;
+			margin: 0;
+			font-size: 1.17em;
+		}
+		> p {
+			padding: 0px 55px;
+			margin: 10px 0px !important;
+		}
+		& em {
+			color: rgba($color: #fff, $alpha: .5) !important;
+		}
+		> .highlighter-rouge {
+			padding: 30px 50px;
+		}
+	}
+	& .doc-text-wrapper {
+		padding: 0 57px;
+		text-align: justify;
+	}
+	& .break-line {
+		height: 1px;
+		background-color: $dark-grey;
+		margin-bottom: 30px;
+	}
+	& p {
+		margin: 0 !important;
+	}
+	/* this is FAQ view see tabindex on any docs .md files*/
+	&.n-4 {
+		background-color: #fff;
+		padding: 0;
+		
+		> ul {
+			margin: 57px;
+			border: 1px solid $light-grey;
+			list-style: none;
+			padding: 0;
+			& h4 {
+				color: $header-color !important;
+				border-bottom: 1px solid $light-grey;
+				margin: 0;
+				padding: 15px 36px;
+			}
+			> li {
+				color: $header-color !important;
+				> ul {
+					list-style: none;
+					border-bottom: 1px solid $light-grey;
+				}
+				& li {
+					color: $light-grey !important;
+					min-height: 106px;
+					display: grid;
+					align-content: center;
+					grid-auto-flow: column;
+					& .highlighter-rouge {
+						grid-area: 2;
+					}
+				}
+			}
+		}
+	}
+}
+/* Banners */
+.faq-banner, .community-banner, .blog-banner {
+	background: url(/metaflux/assets/img/banner/banner-metaflux.jpg);
+	height: 456px;
+	display: grid;
+	position: relative;
+	place-content: center;
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+	> svg {
+		position: absolute;
+		bottom: 0;
+	}
+	> p {
+		padding: 0 10em;
+	}
+}
+
+.article-date {
+	padding: 10px 15px;
+	color: #666;
+	font-style: italic;
+}
+
+main.page-content {
+	position: relative;
+}
+
+code.highlighter-rouge {
+	padding: 0 5px;
+	background-color: #282c34;
+	margin: 5px;
+	color: #fff;
+}
+
+
+/* code styles */
+
+.hljs-string {
+	color: $code-string !important;
+	> * {
+		color: $code-string !important;
+	}
+}
+
+.hljs-attr, .hljs-number {
+	color: $code-obj !important;
+}
+
+.hljs {
+	background: $code-bg !important;
+}
+
+.hljs-literal {
+	color: #364ede !important;
+}
+
+.highlighter-rouge {
+	& .highlight {
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: $fuchsia;
+			top: 0;
+			bottom: 0;
+			width: 10px;
+			left: -10px;
+		}
+	}
+}
+/*
+code.language-HTML {
+	& .highlight {
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: $fuchsia;
+			top: 0;
+			bottom: 0;
+			width: 10px;
+			left: -10px;
+		}
+	}
+}*/

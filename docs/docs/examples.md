@@ -4,12 +4,16 @@ title: Examples | Tutorials
 permalink: /docs/examples/
 tabindex: 3
 ---
+{::options parse_block_html="true" /}
 
-# Examples
-
+<div class="doc-text-wrapper">
 ## Sorting table component
-### Let's start by defining our storage, initial state and our handlers
+*Let's start by defining our storage, initial state and our handlers*
+</div>
 
+<div class="doc-block">
+
+#### Example
 ```js
 // Define the initial state
 const iniState = {
@@ -59,9 +63,12 @@ const handlers = {
 window.storage = new Store(iniState, handlers)
 ```
 
-As you can see above the handler job is to re-sort the tableDate by column name.
+*As you can see above the handler job is to re-sort the tableDate by column name.*
+</div>
 
-### Let's create our MetaComponent 
+<div class="doc-block">
+
+#### Let's create our MetaComponent 
 
 ```js
 // create the web component
@@ -115,8 +122,11 @@ handleStoreEvents() {
 // define the custom element with a name
 window.customElements.define('sort-table', SortTable);
 ```
+</div>
 
-### now we can create our custom element as any HTMLElement
+<div class="doc-block">
+
+#### now we can create our custom element as any HTMLElement
 
 ```js
 // get container element
@@ -127,4 +137,5 @@ const _table = HTMLElementCreator('sort-table');
 _cont.appendChild(_table);
 ```
 
-See this example running on [codepen](https://codepen.io/osszzyy/full/bGENojQ)
+*See this example running on [codepen](https://codepen.io/osszzyy/full/bGENojQ)*
+</div>

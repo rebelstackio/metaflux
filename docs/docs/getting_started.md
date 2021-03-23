@@ -4,57 +4,58 @@ title: Getting Started
 permalink: /docs/getting-started/
 tabindex: 1
 ---
+{::options parse_block_html="true" /}
 
-## Getting Started
-
-### Installation:
-
-`npm install @rebelstack-io/metaflux`
-
+<div class="doc-block">
+#### Installation:
+```bash
+~$ npm install @rebelstack-io/metaflux
+```
+</div>
+<div class="doc-block">
 ### Usage:
-#### Step 1 (Require/Import).
-
+##### Step 1 (Require/Import).
 ```javascript
 const { Store } = require('@rebelstack-io/metaflux');
 ```
-
-#### Or when import is enabled:
-
-
+*Or when import is enabled:*
 ```javascript
 import { Store } from '@rebelstack-io/metaflux';
 ```
-
-#### Or with CDN
+*Or with CDN*
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@rebelstack-io/metaflux@2/dist/metaflux.min.js"></script>
 ```
+<div class="break-line"></div>
 
-#### Step 2 (Initialize).
+##### Step 2 (Initialize).
 
 
 ```javascript
 const storage = new Store(
-	{Counter: 1},
-	{INCREMENT: (action, state) => {
+	{ Counter: 1 },
+	{
+	 INCREMENT: (action, state) => {
 		state.Counter = state.Counter + 1;
 		return {newState: state};
 	}
 });
 ```
+<div class="break-line"></div>
 
-#### Step 3 (Dispatch actions).
+##### Step 3 (Dispatch actions).
 
-The Store object is also an event emitter, when an action is dispatched an event is emitted.
+*The Store object is also an event emitter, when an action is dispatched an event is emitted.*
 
 ```javascript
 storage.dispatch({
 	type: 'INCREMENT'
 });
 ```
+<div class="break-line"></div>
 
-#### Step 4 (Listen for changes).
+##### Step 4 (Listen for changes).
 
 ```javascript
 storage.on('INCREMENT', action => {
@@ -63,12 +64,16 @@ storage.on('INCREMENT', action => {
 	// UPDATE DOM.
 });
 ```
+</div>
+<div class="doc-text-wrapper">
 
 ### MetaComponents
 
-MetaComponents are WebComponents that support Metaflux's storage.
+*MetaComponents are WebComponents that support Metaflux's storage.*
+</div>
+<div class="doc-block">
 
-### Usage
+#### Usage
 
 ```javascript
 import { MetaComponent, Div, H1 } from '@rebelstack-io/metaflux';
@@ -83,10 +88,12 @@ class MyComponent extends MetaComponent {
 
 window.customElements.define('my-component', MyComponent);
 ```
+</div>
+<div class="doc-block">
 
-### Bind MetaComponents to Metaflux Storage
+#### Bind MetaComponents to Metaflux Storage
 
-Althought Storage is an event emitter by itself it is more organize to use Metaflux's handleStoreEvents method to bind itself to the actions dispatched.
+*Althought Storage is an event emitter by itself it is more organize to use Metaflux's handleStoreEvents method to bind itself to the actions dispatched.*
 
 ```javascript
 import { MetaComponent, Store } from '@rebelstack-io/metaflux';
@@ -128,12 +135,12 @@ class MyComponent extends MetaComponent {
 
 window.customElements.define('my-component', MyComponent);
 ```
+</div>
+<div class="doc-block">
 
-### Using MetaComponent inside a MetaContainer
+#### Using MetaComponent inside a MetaContainer
 
-A MetaContainer is a webcomponent with a render method that works like the MetaComponent's render method but instead you're not supposed to bind it to the storage, it doesn't have a handleStoreEvents method in order to avoid that, you can however put MetaComponents inside it.
-
-This object was tought like a not complex element where developers can import stylesheets and organize their layout.
+*A MetaContainer is a webcomponent with a render method that works like the MetaComponent's render method but instead you're not supposed to bind it to the storage, it doesn't have a handleStoreEvents method in order to avoid that, you can however put MetaComponents inside it. This object was tought like a not complex element where developers can import stylesheets and organize their layout.*
 
 ```javascript
 import { MetaContainer } from '@rebelstack-io/metaflux';
@@ -151,26 +158,31 @@ class MyContainer extends MetaContainer {
 window.customElements.define('my-container', MyContainer);
 ```
 
-The MetaContainer is also a good place to declare global variables like the storage.
+*The MetaContainer is also a good place to declare global variables like the storage.*
+</div>
+<div class="doc-text-wrapper">
 
 ### Custom Elements
-The custom elements are instances of HTMLElement which means that we have all the prototypes such as querySelector or innerText. In addition, we created an easy way to use it as you been doing in vanilla Javascript but with a better element constructor.
+*The custom elements are instances of HTMLElement which means that we have all the prototypes such as querySelector or innerText. In addition, we created an easy way to use it as you been doing in vanilla Javascript but with a better element constructor.*
+</div>
+
+<div class="doc-block">
 
 #### Chaining
-Every Custom element can be chain with other elements or it self, Notice that it will return the last element in the chain. We can also obtain the parent of the chain using baseNode method
+*Every Custom element can be chain with other elements or it self, Notice that it will return the last element in the chain. We can also obtain the parent of the chain using baseNode method*
 
 ```js
 const span = Div().Div().Span(false, 'Hello world');
 const base = span.baseNode();
 ```
 
-- the constant span:
+*the constant span:*
 
 ```html
 <span>Hello world</span>
 ```
 
-- the constant base:
+*the constant base:*
 
 ```html
 <div>
@@ -179,15 +191,16 @@ const base = span.baseNode();
 	</div>
 </div>
 ```
+</div>
+
+<div class="doc-block">
 
 #### Parameters
-All the custom elements recive 2 non-mandatory parameters (props, content).
+*All the custom elements recive 2 non-mandatory parameters (props, content).*
 - props is an object where you can define basic propperties such as onclick, className, id ... you name it, if exits the property for HTMLElement can be set in that object, also we have custom props as classList which you can pass an array of classes.
 - content can be a String, HTMLElement, Array containing any of the previous, function returnin any of the previous and Object
 
-#### Examples:
-- props
-
+##### Examples:
 ```js
 Div({
 	id: 'element',
@@ -229,9 +242,12 @@ Select(false, () => {
 	})
 })
 ```
+</div>
+
+<div class="doc-block">
 
 #### Handle Store events
-with the custom element there are two ways to listen to store events:
+*with the custom element there are two ways to listen to store events:*
 
 - onStoreEvent method (notice that all HTMLElement this method in their prototype):
 
@@ -255,6 +271,9 @@ Div({}, {
 	}
 });
 ```
+</div>
+
+<div class="doc-block">
 
 #### More Examples
 
@@ -287,6 +306,9 @@ A({href: '#metaflux'}, 'Click me');
 ```html
 <a href="#metaflux">Click me</a>
 ```
+</div>
+
+<div class="doc-block">
 
 #### Complete List of elements helpers: 
 - 'H1',
@@ -321,6 +343,9 @@ A({href: '#metaflux'}, 'Click me');
 - 'A',
 - 'Section',
 - 'Video'
+</div>
+
+<div class="doc-block">
 
 #### Can i create a custom tag with the custom elements?
 - Yes you can, all the custom elements are a child of one central function HTMLElementCreator which receive the tagName and their props, the content of the element if wants to define needs to be as a property of the props parameter:
@@ -332,3 +357,4 @@ const myElement = HTMLElementCreator('my-element', {
 })
 
 ```
+</div>

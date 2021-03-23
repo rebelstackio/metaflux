@@ -9,7 +9,6 @@
 title: Metaflux Documentation
 email: osmarreyesst@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  the flux pattern for any environment, flexible and friendly with vanilla javascript and web components.
   Metaflux is an open-source library providing tools that allow easy adoption of the flux (observable) pattern in your code which simplifies complex UI, easy debugging and unit-testing.
 baseurl: "/metaflux/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -17,25 +16,31 @@ twitter_username: jekyllrb
 github_username:  jekyll
 benefits: >-
   <div class="porperty">
-  <i class="fas fa-cubes"></i>
+  <img src="assets/img/ic-persistence.svg" alt="persintence">
+  <div>
   <h3>Persistence</h3>
   <p>
   the persistence of UI state simplifies effects of many event-emitting components in your application which can quickly become a tangled web using other patterns like MVC or MVVM
   </p>
   </div>
+  </div>
   <div class="porperty">
-  <i class="fas fa-bug"></i>
+  <img src="assets/img/ic-unitesting.svg" alt="UI testing">
+  <div>
   <h3>Easy UI unit testing</h3>
   <p>
   With persistent state and actions following the flux pattern, it makes it easy to place a UI into a given state, call an action and verify the resulting state.
   </p>
   </div>
+  </div>
   <div class="porperty">
-  <i class="fas fa-cogs"></i>
+  <img src="assets/img/ic-flexible.svg" alt="flexible">
+  <div>
   <h3>flexible</h3>
   <p>
   Metaflux works in any javascript environment and provides relief for developers wanting to follow web standards like es6 and web components without loading large and opinionated frameworks and libraries like React.
   </p>
+  </div>
   </div>
 links: >-
   <a href="#expressif">
@@ -48,10 +53,11 @@ name: Metaflux
 repository: https://github.com/rebelstackio/metaflux
 discord: https://discord.gg/HmuBCRb
 stackoverflow: \#linkto-so
-themecolor: purple
-clearlogo: assets/img/metaflux-logo-white.svg
-darklogo: assets/img/metaflux-logo-black.svg
-
+themecolor: metaflux
+clearlogo: assets/img/isotipo-m.svg
+darklogo: assets/img/isotipo-home.svg
+logotipo: assets/img/logotipo.svg
+graph: assets/img/banner/game.png
 # Build settings
 markdown: kramdown
 plugins:

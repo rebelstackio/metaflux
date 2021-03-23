@@ -53,4 +53,139 @@
 	}
 }
 /*</fuchsia>*/
+/*<METAFLUX custom theme>*/
+.docs-theme-metaflux{
+	& .wrapper {
+		margin-top: 0;
+		/*padding-top: 101px;*/
+	}
+	& .main-content {
+		padding: 0;
+	}
+	
+	& .sumary {
+		padding: 10px 5em;
+		position: relative;
+		background: url('/metaflux/assets/img/banner/banner-metaflux.jpg');
+		padding-bottom: 100px;
+		padding-top: 101px;
+		background-position: center;
+		background-size: cover;
+		> div {
+			place-self: center;
+			display: grid;
+			position: relative;
+			> .d-pretty-button {
+				/*margin-top: 20px;*/
+				font-size: 20px;
+				position: absolute;
+				bottom: -60px;
+				left: 10px;
+				z-index: 3;
+				height: 40px;
+    			padding: 0 15px;
+				background: rgba($color: $light-purlple, $alpha: .5);
+				color: #fff !important;
+				border-color: $light-purlple !important;
+				border-radius: 0;
+				touch-action: manipulation;
+				white-space: nowrap;
+				border-radius: 4px;
+				outline: none;
+				border: 1px solid;
+				cursor: pointer;
+				display: grid;
+				grid-auto-flow: column;
+				column-gap: 10px;
+				align-items: center;
+				&:hover {
+					background: $dark-purlple !important;
+				}
+			}
+			> p {
+				font-size: 20px;
+				color: #fff;
+			}
+			> h1 {
+				font-size: 46px;
+				color: #fff;
+			}
+		}
+		> img {
+			width: 24em;
+			position: absolute;
+			right: 100px;
+			bottom: -10px;
+			z-index: 3;
+		}
+		> svg {
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+		}
+	}
+	/*------*/
+	& .main-header {
+		grid-template-columns: 2fr 4fr 1fr !important;
+		background: $header-color !important;
+		transition: all .3s linear;
+		& .item.active {
+			color: $fuchsia !important;
+			&::after {
+				border-color: $fuchsia !important;
+			}
+		}
+		& .items {
+			place-self: center;
+		}
+		&.transparent {
+			background: transparent !important;
+		}
+		& > .logo {
+			display: grid;
+			grid-auto-flow: column;
+			margin-left: 50px;
+			> .logotipo {
+				height: 2em;
+				width: auto;
+			}
+		}
+	}
+	& .fill {
+		margin: 50px 0;
+		text-align: center;
+		max-width: 50%;
+		place-self: center;
+		> h1 {
+			font-size: 32px;
+		}
+		> p {
+			font-size: 17px;
+		}
+	}
+	& .benefits {
+		& > .props {
+			> .porperty {
+				display: grid;
+				grid-auto-flow: column;
+				column-gap: 1em;
+				padding: 0 2em;
+				> img {
+					width: 8em;
+				}
+				p {
+					color: $grey-blue;
+				}
+				h3 {
+					color: $header-color;
+				}
+			}
+		}
+		& > .graphic > img {
+			width: 40vw;
+		}
+	}
+
+}
+/*</METAFLUX custom theme>*/
 /*---------------------------END-THEMES-------------------------------*/

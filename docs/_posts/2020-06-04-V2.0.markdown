@@ -1,11 +1,18 @@
 ---
-layout: blog
+layout: blog_entry
 title:  "New Release V2"
 date:   2020-06-04 14:26:46 -0500
 categories: blog update
+logo: /metaflux/assets/img/old-logo-dark.svg
+color: "#efefe"
+description: "this version improve the creation of any element, the HTMLCreator is a method that construct a HTMLElement."
 ---
+{::options parse_block_html="true" /}
+<div class="doc-text-wrapper">
 # V2.0.0
-## HTMLCreator
+</div>
+<div class="doc-block">
+#### HTMLCreator
 - this version improve the creation of any element, the HTMLCreator is a method that construct a HTMLElement.
 
 ```js
@@ -17,13 +24,14 @@ HTMLCreator('div', {
 ```
 this will create
 
-```HTML
+```html
 <div id="container">
 	hello world
 </div>
 ```
-
-## In adition we create a buch of pre-made functions
+</div>
+<div class="doc-block">
+#### In adition we create a buch of pre-made functions
 
 ```js
 import { Div } from '@rebelstack-io/metaflux'
@@ -31,8 +39,9 @@ Div({id: 'container'}, 'hello world')
 ```
 
 this will create the same html as above
-
-## With the new custom componenents we added chaining child creation
+</div>
+<div class="doc-block">
+#### With the new custom componenents we added chaining child creation
 
 ```js
 // NOTE: Chaining always will return the last element in this case the button
@@ -51,8 +60,9 @@ this will create
 	</div>
 </div>
 ```
-
-## complete helper elements list
+</div>
+<div class="doc-block">
+#### complete helper elements list
 - H1
 - H2
 - H3
@@ -85,3 +95,4 @@ this will create
 - A
 - Section
 - Video
+</div>

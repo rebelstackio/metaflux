@@ -1,19 +1,30 @@
 ---
-layout: blog
+layout: blog_entry
 title:  "Update V2.0.1"
 date:   2020-06-04 14:26:46 -0500
 categories: blog update
+logo: /metaflux/assets/img/old-logo-white.svg
+color: "#383838"
+description: "In this minor version, we updated some minor bugs, add consistency and improve syntax."
 ---
+{::options parse_block_html="true" /}
+<div class="doc-text-wrapper">
 # V2.0.1
-## Fix onStoreEvent prototype
+</div>
+<div class="doc-block">
+#### Fix onStoreEvent prototype
 In the previous version, onStoreEvents will return undefined due is a void function, this will break the chaining behavior.
 - update now will return the element that call the onStoreEvents and will have their prototype allowing to keep chaining as usual.
 
 ```js
 Div().Button().onStoreEvent(...).baseNode()
 ```
-## Create new function ```DefineElement()``` in replace of ```window.customElements.define()```
+</div>
+<div class="doc-block">
+
+#### Create new function ```DefineElement()``` in replace of ```window.customElements.define()```
 it receives the same parameters and works the same but also will create a helper function to create your new component like the custom elements (Div, Span ...), the name from that element will be capitalized (my-component = MyComponent), this also will be created to the HTMLElement prototype so can be used with the Metaflux chaining
+
 ```js
 import { MetaComponent, Div, Button, DefineElement } from '@rebelstack-io/metaflux';
 
@@ -64,8 +75,10 @@ Div(false, SimpleCounter())
 // or use chaining
 Div().SimpleCounter()
 ```
+</div>
+<div class="doc-block">
 
-## Add new Life cycle function.
+#### Add new Life cycle function.
 For the sake of debugging add ```ComponentDidFail``` to the MetaComponent and MetaShadowComponent, it can be overwritten or called.
 ```js
 class MyComponent extends MetaComponent {
@@ -84,3 +97,4 @@ class MyComponent extends MetaComponent {
 }
 ```
 This is useful for handling errors from parent classes.
+</div>

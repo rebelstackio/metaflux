@@ -2,17 +2,42 @@
 layout: default
 ---
 
-<div class="md-content">
-    {%- include blog_menu.html -%}
-    {{content}}
-    <div class="article-date">
-        {{page.date | date: "%b,%d %Y"}}
-    </div>
+<div class="md-content no-menu white">
+	<div class="blog-banner">
+		<h1>Metaflux blog Overview</h1>
+		<p>Welcome to the blog for Metaflux, here the dev team will be leaving their thoughts, ideas, or just some explanation, the obstacles, and here you will be able to see the core, the heart of the beast, as we update this library will highlight pieces of code, sketches or diagrams that help us to conquer our goal.</p>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,309.3C960,309,1200,299,1320,293.3L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+	</div>
+	<div class="content-wraper">
+		{%- include blog_menu.html -%}
+		<div class="bottom-banner">
+			<div class="logo">
+				<img src="{{'/assets/img/isotipo-m.svg' | relative_url}}" alt="metaflux log">
+			</div>
+			<h1>We love this community, that's why Metaflux is open source</h1>
+			<p>we want you to get involved, to help us improve, perhaps report a bug in our <a href="https://github.com/rebelstackio/metaflux">repository</a>, or just forked and play with it and if you can improve something you can feel free to create a pull request, connect to our <a href="https://discord.gg/HmuBCRb">discord</a> channel and pitch your ideas. </p>
+		</div>
+	</div>
 </div>
 
 <script>
-    if(typeof hljs !== 'undefined') {
+	if(typeof hljs !== 'undefined') {
 		hljs.initHighlighting();
 		hljs.configure()
 	}
+</script>
+<script>
+	window.addEventListener('scroll', (e) => {
+		const y = window.scrollY;
+		const header = document.querySelector('.main-header');
+		if (y > 55) {
+			header.classList.remove('transparent');
+		} else {
+			header.classList.add('transparent');
+		}
+	});
+	window.addEventListener('DOMContentLoaded', () => {
+		const header = document.querySelector('.main-header');
+		header.classList.add('transparent')
+	})
 </script>
