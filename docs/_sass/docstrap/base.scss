@@ -32,7 +32,7 @@ body {
 		display: grid;
 		grid-auto-flow: column;
 		place-content: center start;
-		column-gap: 10px;
+		column-gap: 3em;
 		& > * {
 			position: relative;
 			cursor: default;
@@ -58,10 +58,10 @@ body {
 	& .logo > img {
 		padding: 10px;
 		box-sizing: border-box;
-		width: 70px;
+		width: 3em;
 	}
 	& .logo {
-		place-content: center start;
+		place-content: center;
 		align-items: center;
 		column-gap: 10px;
 	}
@@ -74,7 +74,7 @@ body {
 			cursor: pointer;
 		}
 		& > a {
-			color: rgba($color: #fff, $alpha: .5);
+			color: #fff;
 			font-size: 28px;
 			transition: all .3s linear;
 			&:hover {
@@ -97,7 +97,7 @@ body {
 	max-width: calc(100vw);
 	margin-bottom: 239px;
 	padding: 10px 15px;
-	row-gap: 15px;
+	row-gap: 3em;
 	& > h2 {
 		margin: 15px 0;
 		text-align: center;
@@ -122,7 +122,8 @@ body {
 	background-color: #fff;
 	padding: 10px;
 	& > div {
-		padding: 0 15px;
+		/*padding: 0 10.5em;*/
+		max-width: 30em;
 		color: #666;
 		& > p {
 			margin: 10px 0;
@@ -153,7 +154,7 @@ body {
 	column-gap: 10px;
 	background-color: #fff;
 	text-align: justify;
-	padding: 0 15px;
+	padding: 0 10em;
 	& > * {
 		padding: 5px;
 		display: grid;

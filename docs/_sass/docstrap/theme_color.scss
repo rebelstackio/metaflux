@@ -67,10 +67,13 @@
 		padding: 10px 5em;
 		position: relative;
 		background: url('/metaflux/assets/img/banner/banner-metaflux.jpg');
-		padding-bottom: 100px;
+		padding-bottom: 10em;
 		padding-top: 101px;
-		background-position: center;
-		background-size: cover;
+		background-position: left;
+		background-size: contain;
+		background-size: 81vw;
+		background-repeat: no-repeat;
+		background-color: #000;
 		> div {
 			place-self: center;
 			display: grid;
@@ -83,20 +86,19 @@
 				left: 10px;
 				z-index: 3;
 				height: 40px;
-    			padding: 0 15px;
+    			padding: 0 2em;
 				background: rgba($color: $light-purlple, $alpha: .5);
 				color: #fff !important;
-				border-color: $light-purlple !important;
+				border-color: $fuchsia !important;
 				border-radius: 0;
 				touch-action: manipulation;
 				white-space: nowrap;
-				border-radius: 4px;
 				outline: none;
 				border: 1px solid;
 				cursor: pointer;
 				display: grid;
 				grid-auto-flow: column;
-				column-gap: 10px;
+				column-gap: 1em;
 				align-items: center;
 				&:hover {
 					background: $dark-purlple !important;
@@ -109,13 +111,14 @@
 			> h1 {
 				font-size: 46px;
 				color: #fff;
+				margin-bottom: 72px;
 			}
 		}
 		> img {
-			width: 24em;
+			width: 30em;
 			position: absolute;
 			right: 100px;
-			bottom: -10px;
+			bottom: -3em;
 			z-index: 3;
 		}
 		> svg {
@@ -144,7 +147,6 @@
 		& > .logo {
 			display: grid;
 			grid-auto-flow: column;
-			margin-left: 50px;
 			> .logotipo {
 				height: 2em;
 				width: auto;
@@ -158,9 +160,12 @@
 		place-self: center;
 		> h1 {
 			font-size: 32px;
+			color: $header-color;
 		}
 		> p {
 			font-size: 17px;
+			color: $header-color;
+			max-width: 42vw;
 		}
 	}
 	& .benefits {
@@ -172,9 +177,11 @@
 				padding: 0 2em;
 				> img {
 					width: 8em;
+					place-self: center;
 				}
 				p {
 					color: $grey-blue;
+					max-width: 21em;
 				}
 				h3 {
 					color: $header-color;
