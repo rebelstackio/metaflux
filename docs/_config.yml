@@ -18,7 +18,7 @@ benefits: >-
   <div class="porperty">
   <img src="assets/img/ic-persistence.svg" alt="persintence">
   <div>
-  <h3>Persistence</h3>
+  <h1>Persistence</h1>
   <p>
   the persistence of UI state simplifies effects of many event-emitting components in your application which can quickly become a tangled web using other patterns like MVC or MVVM
   </p>
@@ -27,7 +27,7 @@ benefits: >-
   <div class="porperty">
   <img src="assets/img/ic-unitesting.svg" alt="UI testing">
   <div>
-  <h3>Easy UI unit testing</h3>
+  <h1>Easy UI unit testing</h1>
   <p>
   With persistent state and actions following the flux pattern, it makes it easy to place a UI into a given state, call an action and verify the resulting state.
   </p>
@@ -36,7 +36,7 @@ benefits: >-
   <div class="porperty">
   <img src="assets/img/ic-flexible.svg" alt="flexible">
   <div>
-  <h3>flexible</h3>
+  <h1>flexible</h1>
   <p>
   Metaflux works in any javascript environment and provides relief for developers wanting to follow web standards like es6 and web components without loading large and opinionated frameworks and libraries like React.
   </p>
