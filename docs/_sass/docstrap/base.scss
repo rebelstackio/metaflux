@@ -95,7 +95,7 @@ body {
 .main-content {
 	display: grid;
 	max-width: calc(100vw);
-	margin-bottom: 239px;
+	margin-bottom: 603px;
 	padding: 10px 15px;
 	row-gap: 3em;
 	& > h2 {
@@ -205,48 +205,54 @@ body {
 /*-----------------FOOTER-----------------*/
 .footer {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
 	background-color: $dark-grey;
 	position: absolute;
 	bottom: 0;
 	place-content: center;
-	padding: 10px 8em;
 	left: 0;
 	right: 0;
-	column-gap: 8em;
-	& > .footer-content{
+	padding-top: 259px;
+	padding-bottom: 130px;
+	> .footer-wrapper {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		& h4 {
-			margin: 45PX 0;
-			color: #fff;
-		}
-		& a {
-			margin-bottom: 45px;
-			color: rgba($color: #fff, $alpha: .5);
-		}
-		> div {
-			grid-template-rows: repeat(4, 1fr);
-		}
-	}
-	& > .footer-info {
-		> img.main-logo {
-			margin: 45px 0;
-			width: 4.5em;
-		}
-		> p {
-			margin-bottom: 27px;
-			color: rgba($color: #fff, $alpha: .5);
-		}
-		> img.logo-tipo{
-			height: 11px;
-			margin-bottom: 27px;
-		}
-		> .socials {
+		grid-template-columns: 1fr 1fr;
+		column-gap: 8em;
+		max-width: 1197px;
+		& > .footer-content{
 			display: grid;
-			grid-auto-flow: column;
-			column-gap: 40px;
-			font-size: 2em;
+			grid-template-columns: 1fr 1fr 1fr;
+			& h2 {
+				margin-bottom: 94px;
+				color: #fff;
+				max-height: 29px;
+			}
+			& a {
+				margin-bottom: 45px;
+				color: rgba($color: #fff, $alpha: .5);
+			}
+		}
+		& > .footer-info {
+			> img.main-logo {
+				margin: 45px 0;
+				width: 4.5em;
+			}
+			> p {
+				margin-bottom: 27px;
+				color: rgba($color: #fff, $alpha: .5);
+			}
+			> img.logo-tipo{
+				height: 11px;
+				margin-bottom: 27px;
+				place-self: flex-start;
+			}
+			> .socials {
+				display: grid;
+				grid-auto-flow: column;
+				column-gap: 40px;
+				font-size: 35px;
+				grid-template-columns: repeat(3, 35px);
+				align-items: center;
+			}
 		}
 	}
 	/*& img {
@@ -255,8 +261,8 @@ body {
 		place-self: center;
 	}*/
 	& div {
-		display: grid;
-		/*place-self: center;*/
+		display: flex;
+		flex-direction: column;
 	}
 	& a {
 		text-decoration: none;
