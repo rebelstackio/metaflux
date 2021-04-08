@@ -149,9 +149,9 @@ import '../components/my-component'; // Here we import our previously defined Me
 class MyContainer extends MetaContainer {
 	render () {
 		return `
-			<h2>Simple Counter</h2>
-			<my-component></my-component>
-		`;
+	<h2>Simple Counter</h2>
+	<my-component></my-component>
+	`;
 	}
 }
 

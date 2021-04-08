@@ -14,11 +14,15 @@
 		margin: 0;
 		padding: 0;
 		background: #f9f9f9;
+		display: flex;
+		flex-direction: column;
 		> .socials.big {
 			display: grid;
 			place-items: center;
-			padding: 160px;
+			padding: 160px 0;
 			row-gap: 50px;
+			max-width: 50vw;
+			align-self: center;
 			& p, h3, h2, h1 {
 				color: $header-color;
 			}
@@ -32,9 +36,9 @@
 				> .icon {
 					display: grid;
 					place-content: center;
-					font-size: 8em;
 					> * {
 						color: #fff;
+						font-size: 8em;
 					}
 					&.discord {
 						background-color: $discord-blue;
@@ -69,6 +73,7 @@
 			padding: 25px 30px;
 			margin: 0;
 			border-bottom: 1px solid $dark-grey;
+			font-size: 22px;
 		}
 		> h3 {
 			padding: 25px 30px;
@@ -102,6 +107,8 @@
 	}
 	& p {
 		margin: 0 !important;
+		font-size: 22px;
+		line-height: 1.5;
 	}
 	/* this is FAQ view see tabindex on any docs .md files*/
 	&.n-4 {
@@ -118,9 +125,13 @@
 				border-bottom: 1px solid $light-grey;
 				margin: 0;
 				padding: 15px 36px;
+				font-size: 22px;
 			}
 			> li {
 				color: $header-color !important;
+				& p {
+					color: $light-grey !important;
+				}
 				> ul {
 					list-style: none;
 					border-bottom: 1px solid $light-grey;
@@ -149,6 +160,7 @@
 	background-position: center;
 	background-size: cover;
 	text-align: center;
+	padding-top: 217px;
 	> svg {
 		position: absolute;
 		bottom: 0;
@@ -210,6 +222,12 @@ code.highlighter-rouge {
 			left: -10px;
 		}
 	}
+	& span.javascript {
+		color: #19dbe5;
+		> * {
+			color: #19dbe5;
+		}
+	}
 }
 /*
 code.language-HTML {
@@ -226,3 +244,7 @@ code.language-HTML {
 		}
 	}
 }*/
+
+code > *{
+	font-family: 'Roboto Mono', monospace !important;
+}
