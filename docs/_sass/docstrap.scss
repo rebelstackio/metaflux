@@ -88,7 +88,9 @@ $custom-red: #f56954;
 			margin-left: unset !important;
 		}
 	}
-
+@media only screen and (min-device-width: 2050px) {
+	
+}
 
 /* import other sass files */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');

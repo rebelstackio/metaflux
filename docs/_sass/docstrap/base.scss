@@ -13,7 +13,7 @@ html, body {
 
 body {
 	display: grid;
-	/* place-items: center; */
+	height: fit-content;
 }
 
 /*HEADER*/
@@ -91,7 +91,7 @@ body {
 		& > a {
 			color: inherit;
 			text-decoration: none;
-			font-size: 22px;
+			/*font-size: 22px;*/
 		}
 	}
 }
@@ -101,7 +101,6 @@ body {
 .main-content {
 	display: grid;
 	max-width: calc(100vw);
-	margin-bottom: 603px;
 	padding: 10px 15px;
 	row-gap: 3em;
 	& > h2 {
@@ -114,7 +113,7 @@ body {
 	}
 	& p {
 		margin: 5px 0;
-		font-size: 17px;
+		/*font-size: 17px;*/
 		color: rgba($color: #fff, $alpha: .5);
 	}
 
@@ -206,18 +205,13 @@ body {
 	margin-top: 101px;
 	overflow-y: auto;
 	position: relative;
-	margin-bottom: 450px;
 }
 
 /*-----------------FOOTER-----------------*/
 .footer {
 	display: grid;
 	background-color: $dark-grey;
-	position: absolute;
-	bottom: 0;
 	place-content: center;
-	left: 0;
-	right: 0;
 	padding-top: 259px;
 	padding-bottom: 130px;
 	> .footer-wrapper {
@@ -302,4 +296,16 @@ pretty-menu-item {
 
 pretty-menu::after {
 	position: absolute;
+}
+
+p, a, button {
+	font-size: clamp(1em, calc(.5em + .7vw), 34px);
+}
+
+h1 {
+	font-size: clamp(2em, calc(1em + .7vw), 60px);
+}
+
+h2 {
+	font-size: clamp(1.5em, calc(.7em + .7vw), 60px);
 }
