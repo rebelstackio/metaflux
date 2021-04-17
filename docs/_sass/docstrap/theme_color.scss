@@ -70,7 +70,7 @@
 		padding: 10px 5em;
 		position: relative;
 		background: url('/metaflux/assets/img/banner/banner-metaflux.jpg');
-		padding-bottom: 10em;
+		padding-bottom: calc(max(11em, 1em + 8vw));
 		padding-top: 101px;
 		background-position: left;
 		background-size: contain;
@@ -85,11 +85,11 @@
 				/*margin-top: 20px;*/
 				/*font-size: 20px;*/
 				position: absolute;
-				bottom: -60px;
+				bottom: calc(min(-3vw, -60px));
 				left: 10px;
 				z-index: 3;
 				
-    			padding: 0 2em;
+				padding: 0 2em;
 				background: rgba($color: $light-purlple, $alpha: .5);
 				color: #fff !important;
 				border-color: $fuchsia !important;
