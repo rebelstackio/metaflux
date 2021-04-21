@@ -121,7 +121,7 @@
 			}
 		}
 		> img {
-			width: 621px;
+			width: calc(max(621px, 15em + 15vw));
 			position: absolute;
 			right: 100px;
 			bottom: -5em;
@@ -129,7 +129,7 @@
 		}
 		> svg {
 			position: absolute;
-			bottom: 0;
+			bottom: -1px;
 			z-index: 2;
 		}
 	}
@@ -154,7 +154,7 @@
 			display: grid;
 			grid-auto-flow: column;
 			> .logotipo {
-				height: 2em;
+				height: calc(max(2em, 1em + 1vw));
 				width: auto;
 			}
 		}

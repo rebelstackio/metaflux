@@ -7,14 +7,14 @@ tabindex: 1
 {::options parse_block_html="true" /}
 
 <div class="doc-block">
-#### Installation:
+## Installation:
 ```bash
 ~$ npm install @rebelstack-io/metaflux
 ```
 </div>
 <div class="doc-block">
-### Usage:
-##### Step 1 (Require/Import).
+## Usage:
+### Step 1 (Require/Import).
 ```javascript
 const { Store } = require('@rebelstack-io/metaflux');
 ```
@@ -29,7 +29,7 @@ import { Store } from '@rebelstack-io/metaflux';
 ```
 <div class="break-line"></div>
 
-##### Step 2 (Initialize).
+### Step 2 (Initialize).
 
 
 ```javascript
@@ -44,7 +44,7 @@ const storage = new Store(
 ```
 <div class="break-line"></div>
 
-##### Step 3 (Dispatch actions).
+### Step 3 (Dispatch actions).
 
 *The Store object is also an event emitter, when an action is dispatched an event is emitted.*
 
@@ -55,7 +55,7 @@ storage.dispatch({
 ```
 <div class="break-line"></div>
 
-##### Step 4 (Listen for changes).
+### Step 4 (Listen for changes).
 
 ```javascript
 storage.on('INCREMENT', action => {
@@ -73,7 +73,7 @@ storage.on('INCREMENT', action => {
 </div>
 <div class="doc-block">
 
-#### Usage
+## Usage
 
 ```javascript
 import { MetaComponent, Div, H1 } from '@rebelstack-io/metaflux';
@@ -91,7 +91,7 @@ window.customElements.define('my-component', MyComponent);
 </div>
 <div class="doc-block">
 
-#### Bind MetaComponents to Metaflux Storage
+## Bind MetaComponents to Metaflux Storage
 
 *Althought Storage is an event emitter by itself it is more organize to use Metaflux's handleStoreEvents method to bind itself to the actions dispatched.*
 
@@ -138,7 +138,7 @@ window.customElements.define('my-component', MyComponent);
 </div>
 <div class="doc-block">
 
-#### Using MetaComponent inside a MetaContainer
+## Using MetaComponent inside a MetaContainer
 
 *A MetaContainer is a webcomponent with a render method that works like the MetaComponent's render method but instead you're not supposed to bind it to the storage, it doesn't have a handleStoreEvents method in order to avoid that, you can however put MetaComponents inside it. This object was tought like a not complex element where developers can import stylesheets and organize their layout.*
 
@@ -168,7 +168,7 @@ window.customElements.define('my-container', MyContainer);
 
 <div class="doc-block">
 
-#### Chaining
+## Chaining
 *Every Custom element can be chain with other elements or it self, Notice that it will return the last element in the chain. We can also obtain the parent of the chain using baseNode method*
 
 ```js
@@ -195,12 +195,12 @@ const base = span.baseNode();
 
 <div class="doc-block">
 
-#### Parameters
+## Parameters
 *All the custom elements recive 2 non-mandatory parameters (props, content).*
 - props is an object where you can define basic propperties such as onclick, className, id ... you name it, if exits the property for HTMLElement can be set in that object, also we have custom props as classList which you can pass an array of classes.
 - content can be a String, HTMLElement, Array containing any of the previous, function returnin any of the previous and Object
 
-##### Examples:
+### Examples:
 ```js
 Div({
 	id: 'element',
@@ -246,7 +246,7 @@ Select(false, () => {
 
 <div class="doc-block">
 
-#### Handle Store events
+## Handle Store events
 *with the custom element there are two ways to listen to store events:*
 
 - onStoreEvent method (notice that all HTMLElement this method in their prototype):
@@ -275,7 +275,7 @@ Div({}, {
 
 <div class="doc-block">
 
-#### More Examples
+## More Examples
 
 ```js
 Form({}, () => (
@@ -310,7 +310,7 @@ A({href: '#metaflux'}, 'Click me');
 
 <div class="doc-block">
 
-#### Complete List of elements helpers: 
+## Complete List of elements helpers: 
 - 'H1',
 - 'H2',
 - 'H3',
@@ -347,7 +347,7 @@ A({href: '#metaflux'}, 'Click me');
 
 <div class="doc-block">
 
-#### Can i create a custom tag with the custom elements?
+## Can i create a custom tag with the custom elements?
 - Yes you can, all the custom elements are a child of one central function HTMLElementCreator which receive the tagName and their props, the content of the element if wants to define needs to be as a property of the props parameter:
 
 

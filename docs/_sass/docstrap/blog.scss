@@ -39,6 +39,11 @@
 				background-color: #fff;
 				padding: 71px 36px;
 				position: relative;
+				> h1 {
+					color: $header-color;
+					margin: 0;
+					margin-bottom: .7em;
+				}
 				> a {
 					position: absolute;
 					bottom: 10px;

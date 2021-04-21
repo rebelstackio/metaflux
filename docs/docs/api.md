@@ -8,8 +8,8 @@ tabindex: 2
 
 <div class="doc-block">
 
-#### Store
-##### Constructor
+## Store
+### Constructor
 - the store constructor needs 2 parameters: iniState and handlers:
 
 ```js
@@ -30,14 +30,14 @@ globlal.storage = new Store(
 </div>
 <div class="doc-block">
 
-#### Dispatch event
+## Dispatch event
 ```js
 global.storage.dispatch({ type: 'EVENT_NAME', ... })
 ```
 </div>
 <div class="doc-block">
 
-#### Listening to an event
+## Listening to an event
 - With the method on we can listen to an event in any place of out app.
 ```js
 	global.storage.on('EVENT_NAME', (action, state) => {
@@ -47,8 +47,8 @@ global.storage.dispatch({ type: 'EVENT_NAME', ... })
 </div>
 <div class="doc-block">
 
-#### MetaComponents
-##### render
+## MetaComponents
+### render
 - render is a method that you should override, is mandatory to have it in your class component
 - should return a String or HTMLElement
 ```js
@@ -63,7 +63,7 @@ class MyComponent extends MetaCompoenent {
 }
 ```
 
-##### addListeners
+### addListeners
 - This is a non-mandatory function, is a helper function where is the best practice to listen to DOM Evenets.
 
 ```js
@@ -81,7 +81,7 @@ addListeners() {
 }
 ```
 
-##### Getters and Setters
+### Getters and Setters
 - As you might assume we can use standard getter and setters from javascript classes.
 
 ```js
@@ -104,7 +104,7 @@ class MyComponent extends MetaCompoenent {
 }
 ```
 
-##### handleStoreEvents
+### handleStoreEvents
 - this is a mandatory function only if the storage is past to the super in the constructor.
 
 ```js
@@ -127,7 +127,7 @@ class MyComponent extends MetaCompoenent {
 	}
 ```
 
-##### ComponentDidFail
+### ComponentDidFail
 *For the sake of debugging ```ComponentDidFail``` exists in the MetaComponent and MetaShadowComponent, it can be overwritten or called.*
 ```js
 class MyComponent extends MetaComponent {
@@ -150,13 +150,13 @@ class MyComponent extends MetaComponent {
 
 <div class="doc-block">
 
-#### Element Construction
+## Element Construction
 Metaflux supports most standard elements with easy constructors:
 ```javascript
 var mydiv = Div();
 ```
 
-##### Chaining constructors
+### Chaining constructors
 ```javascript
 var myelegrp = Div().Div().Span('Hello');
 console.log(myelegrp);  // references final element
@@ -166,12 +166,12 @@ console.log(myelegrp.baseNode()); // baseNode() references top of chain
 // <div><div><span>Hello</span></div></div>
 ```
 
-##### Importing Element Constructors
+### Importing Element Constructors
 ```
 import { Div, H1, A } from '@rebelstack-io/metaflux';
 ```
 
-##### ElementConstructor
+### ElementConstructor
 *constructor*( textContent )
 ```javascript
 var mydiv = Div('<h1>Hello</h1>');
@@ -187,7 +187,7 @@ var ahref = A({href:"#"},'anchor text');
 console.log(ahref); // <a href="#">anchor text</a>
 ```
 
-##### Supported Element Constructors
+### Supported Element Constructors
 
 - Standard HTML
 	- H1()
