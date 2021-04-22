@@ -11,7 +11,6 @@ permalink: /community/
 The Metaflux community is most readily found on its:
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f9f9f9" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,309.3C960,309,1200,299,1320,293.3L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
 </div>
-</div>
 
 <div class="socials big">
 
@@ -23,7 +22,7 @@ The Metaflux community is most readily found on its:
 ## Discord
 If you’re a Metaflux user, you’re highly encouraged to keep an eye on these issues and jump in on the discussions, to help us understand how to design tradeoffs that might affect you.
 
-## [Go to Discord](https://discord.gg/HmuBCRb)
+## [Go to Discord <i class="fas fa-arrow-right"></i>](https://discord.gg/HmuBCRb)
 </div>
 </div>
 
@@ -34,7 +33,7 @@ If you’re a Metaflux user, you’re highly encouraged to keep an eye on these 
 <div class="description">
 ## Github
 Github is used for tracking issues. The primary location for these is the main [Metaflux repository](https://github.com/rebelstackio/docstrap/issues).
-## [Go to Github](https://github.com/rebelstackio/metaflux)
+## [Go to Github <i class="fas fa-arrow-right"></i>](https://github.com/rebelstackio/metaflux)
 </div>
 </div>
 
@@ -46,7 +45,7 @@ Github is used for tracking issues. The primary location for these is the main [
 ## StackOverflow
 Open community for anyone that codes, this can help
 you get answers to your toughest coding questions.
-## [Go to Stackoverflow](#)
+## [Go to Stackoverflow <i class="fas fa-arrow-right"></i>](#)
 </div>
 </div>
 </div>

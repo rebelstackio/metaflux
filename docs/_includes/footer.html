@@ -1,29 +1,31 @@
 <div class="footer">
-	<div class="footer-info">
-		<img class="main-logo" src="{{site.clearlogo | relative_url }}" alt="default-logo">
-		<img class="logo-tipo" src="{{site.logotipo | relative_url }}" alt="" srcset="">
-		<p>Dolor sit amet, consectetur adipiscing elit, empor incididunt ut labore et dolore.</p>
-		<div class="socials">
-			<a class="gh" href="{{site.repository}}" target="_blank"><i class="fab fa-github"></i></a>
-			<a class="discord" href="{{site.discord}}" target="_blank"><i class="fab fa-discord"></i></a>
-			<a href="{{site.stackoverflow}}" class="stackoverflow"><i class="fab fa-stack-overflow"></i></a>
+	<div class="footer-wrapper">
+		<div class="footer-info">
+			<img class="main-logo" src="{{site.clearlogo | relative_url }}" alt="default-logo">
+			<img class="logo-tipo" src="{{site.logotipo | relative_url }}" alt="" srcset="">
+			<p>Dolor sit amet, consectetur adipiscing elit, empor incididunt ut labore et dolore.</p>
+			<div class="socials">
+				<a class="gh" href="{{site.repository}}" target="_blank"><i class="fab fa-github"></i></a>
+				<a class="discord" href="{{site.discord}}" target="_blank"><i class="fab fa-discord"></i></a>
+				<a href="{{site.stackoverflow}}" class="stackoverflow"><i class="fab fa-stack-overflow"></i></a>
+			</div>
 		</div>
-	</div>
-	<div class="footer-content">
-		<div class="docs">
-			<h4>Docs</h4>
-			<a href="{{'docs/overview/' | relative_url}}">Getting Started</a>
-			<a href="{{'docs/examples/' | relative_url}}">Examples</a>
-			<a href="{{'docs/api/' | relative_url}}">API Reference</a>
-		</div>
-		<div class="community">
-			<h4>Community</h4>
-			<a href="{{site.stackoverflow}}">Stack Overflow</a>
-			<a href="{{site.discord}}">Feedback</a>
-		</div>
-		<div class="more">
-			<h4>More</h4>
-			<a href="{{site.repository}}" target="_blank">GitHub</a>
+		<div class="footer-content">
+			<div class="docs">
+				<h2>Docs</h2>
+				<a href="{{'docs/overview/' | relative_url}}">Getting Started</a>
+				<a href="{{'docs/examples/' | relative_url}}">Examples</a>
+				<a href="{{'docs/api/' | relative_url}}">API Reference</a>
+			</div>
+			<div class="community">
+				<h2>Community</h2>
+				<a href="{{site.stackoverflow}}">Stack Overflow</a>
+				<a href="{{site.discord}}">Feedback</a>
+			</div>
+			<div class="more">
+				<h2>More</h2>
+				<a href="{{site.repository}}" target="_blank">GitHub</a>
+			</div>
 		</div>
 	</div>
 </div>

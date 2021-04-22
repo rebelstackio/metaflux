@@ -58,6 +58,9 @@
 	& .wrapper {
 		margin-top: 0;
 		/*padding-top: 101px;*/
+		overflow: hidden;
+		height: -moz-available;
+		height: max-content;
 	}
 	& .main-content {
 		padding: 0;
@@ -67,60 +70,66 @@
 		padding: 10px 5em;
 		position: relative;
 		background: url('/metaflux/assets/img/banner/banner-metaflux.jpg');
-		padding-bottom: 100px;
+		padding-bottom: calc(max(11em, 1em + 8vw));
 		padding-top: 101px;
-		background-position: center;
-		background-size: cover;
+		background-position: left;
+		background-size: contain;
+		background-size: 81vw;
+		background-repeat: no-repeat;
+		background-color: #000;
 		> div {
 			place-self: center;
 			display: grid;
 			position: relative;
 			> .d-pretty-button {
 				/*margin-top: 20px;*/
-				font-size: 20px;
+				/*font-size: 20px;*/
 				position: absolute;
-				bottom: -60px;
+				bottom: calc(min(-3vw, -60px));
 				left: 10px;
 				z-index: 3;
-				height: 40px;
-    			padding: 0 15px;
+				
+				padding: 0 2em;
 				background: rgba($color: $light-purlple, $alpha: .5);
 				color: #fff !important;
-				border-color: $light-purlple !important;
+				border-color: $fuchsia !important;
 				border-radius: 0;
 				touch-action: manipulation;
 				white-space: nowrap;
-				border-radius: 4px;
 				outline: none;
 				border: 1px solid;
 				cursor: pointer;
 				display: grid;
 				grid-auto-flow: column;
-				column-gap: 10px;
+				column-gap: 1em;
 				align-items: center;
+				padding: .5em 2.5em;
+				height: unset;
+				width: unset;
 				&:hover {
 					background: $dark-purlple !important;
 				}
 			}
 			> p {
-				font-size: 20px;
+				/*font-size: 20px;*/
 				color: #fff;
 			}
 			> h1 {
-				font-size: 46px;
+				/*font-size: 46px;*/
 				color: #fff;
+				margin-bottom: 72px;
 			}
 		}
 		> img {
-			width: 24em;
+			width: calc(max(621px, 15em + 15vw));
 			position: absolute;
 			right: 100px;
-			bottom: -10px;
+			bottom: -5em;
 			z-index: 3;
 		}
 		> svg {
 			position: absolute;
-			bottom: 0;
+			bottom: -1px;
 			z-index: 2;
 		}
 	}
@@ -144,9 +153,8 @@
 		& > .logo {
 			display: grid;
 			grid-auto-flow: column;
-			margin-left: 50px;
 			> .logotipo {
-				height: 2em;
+				height: calc(max(2em, 1em + 1vw));
 				width: auto;
 			}
 		}
@@ -157,10 +165,13 @@
 		max-width: 50%;
 		place-self: center;
 		> h1 {
-			font-size: 32px;
+			/*font-size: 32px;*/
+			color: $header-color;
 		}
 		> p {
-			font-size: 17px;
+			/*font-size: 17px;*/
+			color: $header-color;
+			max-width: 42vw;
 		}
 	}
 	& .benefits {
@@ -170,13 +181,16 @@
 				grid-auto-flow: column;
 				column-gap: 1em;
 				padding: 0 2em;
+				align-items: center;
 				> img {
-					width: 8em;
+					width: calc(min(6vw, 243px));
+					place-self: center;
 				}
 				p {
 					color: $grey-blue;
+					max-width: 21em;
 				}
-				h3 {
+				h1 {
 					color: $header-color;
 				}
 			}

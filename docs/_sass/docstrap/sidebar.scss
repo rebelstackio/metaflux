@@ -3,11 +3,48 @@ pretty-menu {
 		color: $fuchsia !important;
 	}
 
+	& .p-menu-box {
+		width: 15vw;
+	}
+
 	& .p-menu-item-box.selected {
 		background-color: rgba($color: $fuchsia, $alpha: .1) !important;
 		&::after {
 			right: unset !important;
 			border-color: $fuchsia !important;
 		}
+	}
+
+	& .p-menu-item-box {
+		height: 4em !important;
+		&::after {
+			min-width: unset !important;
+		}
+	}
+
+	pretty-menu-item {
+		& a {
+			color: inherit;
+			text-decoration: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		& .p-menu-item-box > div {
+			position: relative;
+			align-self: center;
+			height: 3em;
+		}
+	}
+	
+	pretty-menu::after {
+		position: absolute;
+	}
+	&::after {
+		min-width: unset !important;
 	}
 }

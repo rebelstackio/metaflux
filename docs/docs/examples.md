@@ -13,7 +13,7 @@ tabindex: 3
 
 <div class="doc-block">
 
-#### Example
+## Example
 ```js
 // Define the initial state
 const iniState = {
@@ -68,7 +68,7 @@ window.storage = new Store(iniState, handlers)
 
 <div class="doc-block">
 
-#### Let's create our MetaComponent 
+## Let's create our MetaComponent 
 
 ```js
 // create the web component
@@ -126,7 +126,7 @@ window.customElements.define('sort-table', SortTable);
 
 <div class="doc-block">
 
-#### now we can create our custom element as any HTMLElement
+## now we can create our custom element as any HTMLElement
 
 ```js
 // get container element

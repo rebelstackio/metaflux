@@ -12,7 +12,7 @@ description: "In this minor version, we updated some minor bugs, add consistency
 # V2.0.1
 </div>
 <div class="doc-block">
-#### Fix onStoreEvent prototype
+## Fix onStoreEvent prototype
 In the previous version, onStoreEvents will return undefined due is a void function, this will break the chaining behavior.
 - update now will return the element that call the onStoreEvents and will have their prototype allowing to keep chaining as usual.
 
@@ -22,7 +22,7 @@ Div().Button().onStoreEvent(...).baseNode()
 </div>
 <div class="doc-block">
 
-#### Create new function ```DefineElement()``` in replace of ```window.customElements.define()```
+## Create new function ```DefineElement()``` in replace of ```window.customElements.define()```
 it receives the same parameters and works the same but also will create a helper function to create your new component like the custom elements (Div, Span ...), the name from that element will be capitalized (my-component = MyComponent), this also will be created to the HTMLElement prototype so can be used with the Metaflux chaining
 
 ```js
@@ -78,7 +78,7 @@ Div().SimpleCounter()
 </div>
 <div class="doc-block">
 
-#### Add new Life cycle function.
+## Add new Life cycle function.
 For the sake of debugging add ```ComponentDidFail``` to the MetaComponent and MetaShadowComponent, it can be overwritten or called.
 ```js
 class MyComponent extends MetaComponent {

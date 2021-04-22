@@ -1,9 +1,12 @@
 /*-------------------- DOCS CONTENT ------------------*/
 .md-content {
-	margin-left: 250px;
+	margin-left: 15vw;
 	margin-top: 98px;
 	padding: 57px;
 	background: $dark-grey;
+	box-sizing: border-box;
+	max-width: 85vw;
+	padding-bottom: 100px;
 	& ul {
 		padding-left: 20px;
 		color: rgba($color: #fff, $alpha: .5);
@@ -14,11 +17,17 @@
 		margin: 0;
 		padding: 0;
 		background: #f9f9f9;
+		display: flex;
+		flex-direction: column;
+		max-width: 100vw;
+		padding-bottom: 100px;
 		> .socials.big {
 			display: grid;
 			place-items: center;
-			padding: 160px;
+			padding: 160px 0;
 			row-gap: 50px;
+			max-width: 50vw;
+			align-self: center;
 			& p, h3, h2, h1 {
 				color: $header-color;
 			}
@@ -32,9 +41,9 @@
 				> .icon {
 					display: grid;
 					place-content: center;
-					font-size: 8em;
 					> * {
 						color: #fff;
+						font-size: 8em;
 					}
 					&.discord {
 						background-color: $discord-blue;
@@ -65,10 +74,11 @@
 		display: grid;
 		align-items: center;
 		margin-top: 33px;
-		> h4 {
+		> h2 {
 			padding: 25px 30px;
 			margin: 0;
 			border-bottom: 1px solid $dark-grey;
+			/*font-size: 22px;*/
 		}
 		> h3 {
 			padding: 25px 30px;
@@ -78,7 +88,7 @@
 			color: rgba($color: #fff, $alpha: .5) !important;
 			padding: 0px 30px;
 			margin: 0;
-			font-size: 1.17em;
+			/*font-size: 1.17em;*/
 		}
 		> p {
 			padding: 0px 55px;
@@ -89,6 +99,7 @@
 		}
 		> .highlighter-rouge {
 			padding: 30px 50px;
+			overflow-x: auto;
 		}
 	}
 	& .doc-text-wrapper {
@@ -102,6 +113,8 @@
 	}
 	& p {
 		margin: 0 !important;
+		/*font-size: 22px;*/
+		line-height: 1.5;
 	}
 	/* this is FAQ view see tabindex on any docs .md files*/
 	&.n-4 {
@@ -118,9 +131,13 @@
 				border-bottom: 1px solid $light-grey;
 				margin: 0;
 				padding: 15px 36px;
+				/*font-size: 22px;*/
 			}
 			> li {
 				color: $header-color !important;
+				& p {
+					color: $light-grey !important;
+				}
 				> ul {
 					list-style: none;
 					border-bottom: 1px solid $light-grey;
@@ -149,12 +166,15 @@
 	background-position: center;
 	background-size: cover;
 	text-align: center;
+	padding-top: 217px;
 	> svg {
 		position: absolute;
 		bottom: 0;
 	}
 	> p {
 		padding: 0 10em;
+		margin: auto !important;
+		max-width: 60%;
 	}
 }
 
@@ -210,6 +230,12 @@ code.highlighter-rouge {
 			left: -10px;
 		}
 	}
+	& span.javascript {
+		color: #19dbe5;
+		> * {
+			color: #19dbe5;
+		}
+	}
 }
 /*
 code.language-HTML {
@@ -226,3 +252,7 @@ code.language-HTML {
 		}
 	}
 }*/
+
+code > *{
+	font-family: 'Roboto Mono', monospace !important;
+}
