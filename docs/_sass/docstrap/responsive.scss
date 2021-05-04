@@ -1,0 +1,74 @@
+@media only screen and (min-device-width: 300px)
+	and (max-device-width: 800px)
+	and (orientation: portrait)
+	{
+		.main-header{
+			> .items {
+				display: none;
+			}
+		}
+		.mobile-hidden {
+			display: none !important;
+		}
+		.sumary{
+			max-width: 100vw;
+			background-size: cover !important;
+			grid-template-columns: unset !important;
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+			> img {
+				width: 50vw !important;
+				left: calc(50% - 25vw);
+				right: unset !important;
+			}
+			> div {
+				margin: auto;
+				max-width: 72vw;
+				> button {
+					width: 50vw !important;
+					left: calc(50% - 25vw) !important;
+				}
+			}
+		}
+		.benefits {
+			grid-auto-flow: unset !important;
+			padding: unset !important;
+			& .porperty {
+				& img {
+					width: 6rem !important;
+				}
+			}
+			> * {
+				place-self: center;
+			}
+			.graphic > img {
+				width: 80vw !important;
+			}
+		}
+		.fill {
+			max-width: unset !important;
+			padding: 0 40px;
+			> p {
+				max-width: unset !important;
+				text-align: justify;
+			}
+		}
+		.footer{
+			padding: unset !important;
+			 > .footer-wrapper {
+				grid-template-columns: unset !important;
+				row-gap: 3em;
+				> .footer-info {
+					place-items: center;
+				}
+				> .footer-content {
+					h2 {
+						margin-bottom: 1em !important;
+					}
+				}
+			}
+		}
+		.main-content {
+			padding-bottom: 2em !important;
+		}
+	}
