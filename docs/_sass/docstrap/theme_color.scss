@@ -135,7 +135,6 @@
 	}
 	/*------*/
 	& .main-header {
-		grid-template-columns: 2fr 4fr 1fr !important;
 		background: $header-color !important;
 		transition: all .3s linear;
 		& .item.active {

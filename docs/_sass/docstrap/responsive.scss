@@ -3,8 +3,18 @@
 	and (orientation: portrait)
 	{
 		.main-header{
+			grid-template-columns: 2fr .5fr 1fr !important;
 			> .items {
 				display: none;
+			}
+			> .mobile-menu {
+				display: block;
+				grid-area: 1 / 3;
+				place-self: center;
+				> img {
+					width: 3.5em;
+					padding: 10px;
+				}
 			}
 		}
 		.mobile-hidden {
@@ -145,5 +155,8 @@
 		}
 		.faq-banner, .community-banner, .blog-banner {
 			padding-top: 0 !important;
+		}
+		.mobile-nav {
+			display: flex !important;
 		}
 	}
