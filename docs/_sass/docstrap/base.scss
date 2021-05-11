@@ -298,6 +298,8 @@ body {
 		display: grid;
 		padding: 0 15px;
 		row-gap: 15px;
+		overflow: auto;
+		max-height: 65%;
 		> a, .sub-menu {
 			display: grid;
 			grid-template-columns: 3.8em 1fr;
