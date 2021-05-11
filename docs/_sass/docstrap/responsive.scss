@@ -134,6 +134,18 @@
 					}
 				}
 			}
+			&.n-4 {
+				padding: 0 !important;
+				& h2 {
+					color: $header-color;
+				}
+				& li {
+					overflow: hidden;
+				}
+				> ul {
+					margin: 15px auto !important;
+				}
+			}
 		}
 		.bottom-banner {
 			padding: 90px 30px 28px 30px !important;
@@ -149,6 +161,9 @@
 		}
 		pretty-menu.p-mobile-toggled::before {
 			z-index: 2 !important;
+		}
+		pretty-menu .p-mobile-only {
+			display: none !important;
 		}
 		.faq-banner > p, .community-banner > p, .blog-banner > p {
 			padding: 0 !important;

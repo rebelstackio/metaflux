@@ -1,24 +1,35 @@
+{% assign pages =  site.pages | sort: "tabindex"%}
+
 <div class="mobile-nav">
 	<div class="actions">
-		<a href="{{ site.baseurl }}" name="item-1" class="item selected">
+		<a href="{{ site.baseurl }}" name="{{ site.baseurl }}" class="item selected">
 			<div class="icon">
 				<img src="{{'/assets/img/home.svg' | relative_url }}" alt="Home icon">
 			</div>
 			<div class="text">Home</div>
 		</a>
-		<a href="{{'docs/overview/' | relative_url}}" name="item-2" class="item">
+		<div href="{{'docs/overview/' | relative_url}}" name="docs" class="sub-menu">
 			<div class="icon">
 				<img src="{{'/assets/img/documentation.svg' | relative_url }}" alt="Documentation icon">
 			</div>
 			<div class="text">Documentation</div>
-		</a>
-		<a href="{{'community/' | relative_url}}" name="item-3" class="item">
+			<div class="sub-menu-content hidden">
+				{% for page in pages %}
+					{% if page.layout == "docs" %}
+						<a name="{{page.permalink}}" href="{{page.permalink | relative_url}}">
+							{{page.title}}
+						</a>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<a href="{{'community/' | relative_url}}" name="community" class="item">
 			<div class="icon">
 				<img src="{{'/assets/img/community.svg' | relative_url }}" alt="community icon">
 			</div>
 			<div class="text">Community</div>
 		</a>
-		<a href="{{'blog/' | relative_url}}" name="item-4" class="item">
+		<a href="{{'blog/' | relative_url}}" name="blog" class="item">
 			<div class="icon">
 				<img src="{{'/assets/img/blog.svg' | relative_url }}" alt="blog icon">
 			</div>
@@ -52,5 +63,12 @@
 				header.classList.remove('transparent');
 			}
 		})
+		// submenu
+		const submenu = document.querySelector('.sub-menu');
+		const submenuContent = submenu.querySelector('.sub-menu-content');
+		submenu.onclick = () => {
+			submenu.classList.add('expanded')
+			submenuContent.classList.remove('hidden');
+		}
 	})
 </script>
