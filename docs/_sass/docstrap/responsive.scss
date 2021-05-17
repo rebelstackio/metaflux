@@ -70,9 +70,17 @@
 				row-gap: 3em;
 				> .footer-info {
 					place-items: center;
+					& img.logo-tipo {
+						place-self: center !important;
+					}
+					& p {
+						text-align: center;
+					}
 				}
 				> .footer-content {
-					h2 {
+					grid-template-columns: unset !important;
+					text-align: center;
+					& h2 {
 						margin-bottom: 1em !important;
 					}
 				}
