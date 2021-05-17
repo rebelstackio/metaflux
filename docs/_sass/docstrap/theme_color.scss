@@ -60,12 +60,12 @@
 		/*padding-top: 101px;*/
 		overflow: hidden;
 		height: -moz-available;
-		height: max-content;
+		height: 101%;
 	}
 	& .main-content {
 		padding: 0;
 	}
-	
+
 	& .sumary {
 		padding: 10px 5em;
 		position: relative;
@@ -88,7 +88,7 @@
 				bottom: calc(min(-3vw, -60px));
 				left: 10px;
 				z-index: 3;
-				
+
 				padding: 0 2em;
 				background: rgba($color: $light-purlple, $alpha: .5);
 				color: #fff !important;

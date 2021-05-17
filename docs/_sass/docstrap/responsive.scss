@@ -2,6 +2,11 @@
 	and (max-device-width: 800px)
 	and (orientation: portrait)
 	{
+		li {
+			list-style: none !important;
+			text-align: justify;
+			max-width: 85vw;
+		}
 		.main-header{
 			grid-template-columns: 2fr .5fr 1fr !important;
 			> .items {
@@ -112,7 +117,7 @@
 			}
 			ul {
 				padding: 10px 10px !important;
-				max-width: 345px !important;
+				max-width: 85vw !important;
 				place-self: center !important;
 			}
 			.highlighter-rouge {
