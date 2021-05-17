@@ -5,6 +5,7 @@ pretty-menu {
 
 	& .p-menu-box {
 		width: 15vw;
+		z-index: 2;
 	}
 
 	& .p-menu-item-box.selected {

@@ -51,46 +51,6 @@ $custom-red: #f56954;
 		font-size: $base-font-size * $ratio;
 }
 
-@media only screen and (min-device-width: 300px)
-	and (max-device-width: 800px)
-	and (orientation: portrait)
-	{
-		.benefits {
-			grid-auto-flow: row !important;
-			row-gap: 10px;
-			padding: 0 10px !important;
-		}
-		.mobile-hidden {
-			display: none !important;
-		}
-		.main-header {
-			grid-template-columns: auto 1fr;
-			& .active {
-				display: none;
-			}
-		}
-		.footer img {
-			width: 3em;
-		}
-		.sumary {
-			grid-template-columns: unset !important;
-			& img {
-				grid-area: 1 / 1;
-			}
-		}
-		pretty-menu::after {
-			display: none !important;
-		}
-		.related > div {
-			grid-auto-flow: row !important;
-		}
-		.md-content{
-			margin-left: unset !important;
-		}
-	}
-@media only screen and (min-device-width: 2050px) {
-	
-}
 
 /* import other sass files */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
@@ -100,5 +60,6 @@ $custom-red: #f56954;
   "docstrap/theme_color.scss",
   "docstrap/sidebar.scss",
   "docstrap/docs.scss",
-  "docstrap/blog.scss"
+  "docstrap/blog.scss",
+  "docstrap/responsive.scss"
 ;

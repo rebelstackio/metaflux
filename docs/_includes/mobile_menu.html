@@ -1,0 +1,74 @@
+{% assign pages =  site.pages | sort: "tabindex"%}
+
+<div class="mobile-nav">
+	<div class="actions">
+		<a href="{{ site.baseurl }}" name="{{ site.baseurl }}" class="item selected">
+			<div class="icon">
+				<img src="{{'/assets/img/home.svg' | relative_url }}" alt="Home icon">
+			</div>
+			<div class="text">Home</div>
+		</a>
+		<div href="{{'docs/overview/' | relative_url}}" name="docs" class="sub-menu">
+			<div class="icon">
+				<img src="{{'/assets/img/documentation.svg' | relative_url }}" alt="Documentation icon">
+			</div>
+			<div class="text">Documentation</div>
+			<div class="sub-menu-content hidden">
+				{% for page in pages %}
+					{% if page.layout == "docs" %}
+						<a name="{{page.permalink}}" href="{{page.permalink | relative_url}}">
+							{{page.title}}
+						</a>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<a href="{{'community/' | relative_url}}" name="community" class="item">
+			<div class="icon">
+				<img src="{{'/assets/img/community.svg' | relative_url }}" alt="community icon">
+			</div>
+			<div class="text">Community</div>
+		</a>
+		<a href="{{'blog/' | relative_url}}" name="blog" class="item">
+			<div class="icon">
+				<img src="{{'/assets/img/blog.svg' | relative_url }}" alt="blog icon">
+			</div>
+			<div class="text">Blog</div>
+		</a>
+	</div>
+	<div class="socials">
+		<a class="gh" href="{{site.repository}}" target="_blank"><i class="fab fa-github"></i></a>
+		<a class="discord" href="{{site.discord}}" target="_blank"><i class="fab fa-discord"></i></a>
+		<a href="{{site.stackoverflow}}" class="stackoverflow"><i class="fab fa-stack-overflow"></i></a>
+		<h2>Go Ahead!</h2>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const toggler = document.querySelector('.mobile-menu');
+		const nav = document.querySelector('.mobile-nav');
+		const header = document.querySelector('.main-header');
+		const body = document.body;
+		const togglerImg = toggler.querySelector('img');
+		toggler.addEventListener('click', () => {
+			nav.classList.toggle('toggled');
+			if (nav.classList.contains('toggled')) {
+				body.style = 'overflow: hidden;';
+				header.classList.add('transparent');
+				togglerImg.src = "{{'/assets/img/close.svg' | relative_url }}";
+			} else {
+				togglerImg.src = "{{'/assets/img/menu.svg' | relative_url }}";
+				body.style = 'overflow: auto;';
+				header.classList.remove('transparent');
+			}
+		})
+		// submenu
+		const submenu = document.querySelector('.sub-menu');
+		const submenuContent = submenu.querySelector('.sub-menu-content');
+		submenu.onclick = () => {
+			submenu.classList.add('expanded')
+			submenuContent.classList.remove('hidden');
+		}
+	})
+</script>

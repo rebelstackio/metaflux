@@ -1,5 +1,7 @@
 * {
 	font-family: unset !important;
+	box-sizing: border-box;
+	max-width: 100vw;
 }
 
 html, body {
@@ -24,7 +26,7 @@ body {
 	left: 0;
 	right: 0;
 	display: grid;
-	grid-template-columns: .5fr 4fr 1fr;
+	grid-template-columns: 2fr 4fr 1fr;
 	padding: 14px 10px;
 	background-color: $default-d-color;
 	color: #fff;
@@ -92,6 +94,9 @@ body {
 			text-decoration: none;
 			/*font-size: 22px;*/
 		}
+	}
+	& .mobile-menu {
+		display: none;
 	}
 }
 
@@ -271,6 +276,115 @@ body {
 		transition: all .3s ease;
 		&:hover {
 			color: ghostwhite;
+		}
+	}
+}
+
+/* Mobile menu nav */
+.mobile-nav {
+	display: none;
+	position: fixed;
+	width: 80vw;
+	background-color: $dark-grey;
+	z-index: 4;
+	padding-top: 100px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	flex-direction: column;
+	transition: all .1s linear;
+	transform: translate(-100%, 0);
+	> .actions {
+		display: grid;
+		padding: 0 15px;
+		row-gap: 15px;
+		overflow: auto;
+		max-height: 65%;
+		> a, .sub-menu {
+			display: grid;
+			grid-template-columns: 3.8em 1fr;
+			text-decoration: none;
+			column-gap: 15px;
+			position: relative;
+			padding: 5px 0;
+			&.selected::before {
+				content: '';
+				width: 5px;
+				position: absolute;
+				background-color: $fuchsia;
+				left: -15px;
+				height: 100%;
+			}
+		}
+		& img {
+			width: 35px;
+		}
+		& .text {
+			align-self: center;
+			color: #fff;
+		}
+		& .icon {
+			place-self: center;
+		}
+		& a {
+			color: #fff;
+			text-decoration: none;
+		}
+		& .sub-menu-content {
+			grid-area: 2 / 2;
+			display: grid;
+			overflow: hidden;
+			margin: 15px 0;
+			row-gap: 10px;
+			transition: all .1s linear;
+			transform-origin: top;
+			transform: scale(1, 1);
+			&.hidden {
+				transform: scale(1, 0);
+			}
+			& a.active {
+				color: $fuchsia !important;
+			}
+		}
+		& .sub-menu {
+			max-height: 50px;
+			&.expanded {
+				max-height: unset;
+			}
+		}
+	}
+	> .socials {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		place-items: center;
+		color: #fff;
+		border-top: 1px solid rgba($color: #fff, $alpha: .3);
+		padding: 0 2em;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 70%;
+		& a {
+			color: #fff;
+			font-size: 32px;
+			text-decoration: none;
+		}
+		& > h2 {
+			grid-area: 2 / 1 / span 1 / span 3 ;
+		}
+	}
+	&.toggled {
+		transform: translate(0, 0);
+		&::after {
+			content: '';
+			position: fixed;
+			top: 0;
+			right: -20vw;
+			bottom: 0;
+			width: 20vw;
+			z-index: 3;
+			background-color: rgba($color: #000, $alpha: .5);
 		}
 	}
 }
