@@ -13,8 +13,10 @@ Metaflux is an open-source library providing tools that allow easy adoption of t
 <div class="doc-block">
 ## Element Construction and chaining:
 ```javascript
-var t1 = H1('My title'); // <h1>My title</h1>
-var chained = Div().Div().A({href:'#'},'Link').baseNode(); // <div><div><a href="#">Link</a></div></div>
+// <h1>My title</h1>
+var t1 = H1('My title'); 
+// <div><div><a href="#">Link</a></div></div>
+var chained = Div().Div().A({href:'#'},'Link').baseNode();
 ```
 </div>
 <div class="doc-block">
@@ -33,21 +35,25 @@ const storage = new Store(
 
 class MyComponent extends MetaComponent {
 	constructor () {
-		super(storage); // Pass storage to MetaComponent parent
+		// Pass storage to MetaComponent parent
+		super(storage); 
 	}
 	render () {
 		const content = Div().Button({
 			onclick: () => {
-			 this.storage.dispatch({type: 'INCREMENT'}); // Dispatch Increment action when button is clicked.
+			 // Dispatch Increment action when button is clicked.
+			 this.storage.dispatch({type: 'INCREMENT'});
 			}
 		}, 'Increase').baseNode()
-		this.text = content.Div({}, this.storage.getState().Main.value) // get initial state of Counter and assign to element.
+		// get initial state of Counter and assign to element.
+		this.text = content.Div({}, this.storage.getState().Main.value)
 		return content;
 	}
 	handleStoreEvents () {
 		return {
 			'INCREMENT': action => {
-				this.text.textContent = this.storage.getState().Counter; // update the element's textContent with current state
+				// update the element's textContent with current state
+				this.text.textContent = this.storage.getState().Counter;
 			}
 		}
 	}

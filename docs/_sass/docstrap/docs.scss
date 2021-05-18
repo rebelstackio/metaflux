@@ -120,7 +120,9 @@
 	&.n-4 {
 		background-color: #fff;
 		padding: 0;
-		
+		& h2 {
+			color: $header-color;
+		}
 		> ul {
 			margin: 57px;
 			border: 1px solid $light-grey;
@@ -158,7 +160,7 @@
 }
 /* Banners */
 .faq-banner, .community-banner, .blog-banner {
-	background: url(/metaflux/assets/img/banner/banner-metaflux.jpg);
+	background: url(/assets/img/banner/banner-metaflux.jpg);
 	height: 456px;
 	display: grid;
 	position: relative;
@@ -236,6 +238,10 @@ code.highlighter-rouge {
 			color: #19dbe5;
 		}
 	}
+}
+code {
+	font-family: 'Roboto Mono' !important;
+	font-style: normal;
 }
 /*
 code.language-HTML {

@@ -144,7 +144,8 @@ window.customElements.define('my-component', MyComponent);
 
 ```javascript
 import { MetaContainer } from '@rebelstack-io/metaflux';
-import '../components/my-component'; // Here we import our previously defined MetaComponent.
+// Here we import our previously defined MetaComponent.
+import '../components/my-component'; 
 
 class MyContainer extends MetaContainer {
 	render () {

@@ -121,13 +121,17 @@
 				place-self: center !important;
 			}
 			.highlighter-rouge {
-				padding: 20px !important;
+				padding: 10px !important;
 			}
 			.language-plaintext {
 				padding: 5px !important;
 			}
 			.doc-text-wrapper {
 				padding: 0 30px !important;
+			}
+			.doc-block > p {
+				padding: 0 25px;
+				text-align: justify;
 			}
 			.highlight::before {
 				width: 5px !important;
@@ -149,9 +153,6 @@
 			}
 			&.n-4 {
 				padding: 0 !important;
-				& h2 {
-					color: $header-color;
-				}
 				& li {
 					overflow: hidden;
 				}
@@ -186,5 +187,10 @@
 		}
 		.mobile-nav {
 			display: flex !important;
+		}
+		.highlighter-rouge {
+			max-width: 85vw !important;
+			margin: auto !important;
+			width: 100%;
 		}
 	}

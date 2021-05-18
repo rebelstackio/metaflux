@@ -40,7 +40,7 @@ global.storage.dispatch({ type: 'EVENT_NAME', ... })
 ## Listening to an event
 - With the method on we can listen to an event in any place of out app.
 ```js
-	global.storage.on('EVENT_NAME', (action, state) => {
+global.storage.on('EVENT_NAME', (action, state) => {
 	// logic
 })
 ```
@@ -140,8 +140,8 @@ class MyComponent extends MetaComponent {
 		...
 	}
 	ComponentDidFail(reason) {
-	   // Handle you errors here
-	  // If not overwritten by default will throw reason
+		// Handle you errors here
+		// If not overwritten by default will throw reason
 	}
 }
 ```
@@ -159,10 +159,12 @@ var mydiv = Div();
 ### Chaining constructors
 ```javascript
 var myelegrp = Div().Div().Span('Hello');
-console.log(myelegrp);  // references final element
+// references final element
+console.log(myelegrp);  
 // <span>Hello</span>
 
-console.log(myelegrp.baseNode()); // baseNode() references top of chain
+// baseNode() references top of chain
+console.log(myelegrp.baseNode()); 
 // <div><div><span>Hello</span></div></div>
 ```
 
@@ -175,16 +177,19 @@ import { Div, H1, A } from '@rebelstack-io/metaflux';
 *constructor*( textContent )
 ```javascript
 var mydiv = Div('<h1>Hello</h1>');
-console.log(mydiv); // <div><h1>Hello</h1></div>
+// <div><h1>Hello</h1></div>
+console.log(mydiv); 
 
 var yourdiv = Div('hello');
-console.log(yourdiv); // <div>hello</div>
+// <div>hello</div>
+console.log(yourdiv); 
 ```
 
 *constructor*( objProps, textContent )
 ```javascript
 var ahref = A({href:"#"},'anchor text');
-console.log(ahref); // <a href="#">anchor text</a>
+// <a href="#">anchor text</a>
+console.log(ahref); 
 ```
 
 ### Supported Element Constructors

@@ -19,13 +19,13 @@ tabindex: 4
 	- <div>
 	it's very easy you need to add it in the constructor like so:
 	```js
-	class myShadowElement extends MetaShadowComponent {
-			constructor() {
-				this.styles = [
-					'./rel/path/style.css'
-				];
-			}
+class myShadowElement extends MetaShadowComponent {
+	constructor() {
+		this.styles = [
+			'./rel/path/style.css'
+		];
 	}
+}
 	```
 - ## Can i use Metaflux without using import?
 	- <div> Yes, you can use the CDN to get the Metaflux Library.
