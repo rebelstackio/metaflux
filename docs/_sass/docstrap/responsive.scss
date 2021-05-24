@@ -1,5 +1,6 @@
+/* For mobile portrait */
 @media only screen and (min-device-width: 300px)
-	and (max-device-width: 800px)
+	and (max-device-width: 1024px)
 	and (orientation: portrait)
 	{
 		li {
@@ -193,4 +194,28 @@
 			margin: auto !important;
 			width: 100%;
 		}
+}
+/* For tablets and mobiler landscape */
+@media only screen
+	and (max-device-width: 1380px)
+	and (orientation: landscape)
+{
+	.sumary {
+		& img {
+			bottom: -2em !important;
+		}
 	}
+	.benefits {
+		grid-auto-flow: unset !important;
+		place-items: center;
+		& .graphic > img {
+			width: 80vw !important;
+		}
+		& .porperty > img {
+			width: 15em !important;
+		}
+	}
+	p, a, button {
+		font-size: 1.3em !important;
+	}
+}

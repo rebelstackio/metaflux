@@ -73,8 +73,7 @@
 		padding-bottom: calc(max(11em, 1em + 8vw));
 		padding-top: 101px;
 		background-position: left;
-		background-size: contain;
-		background-size: 81vw;
+		background-size: cover;
 		background-repeat: no-repeat;
 		background-color: #000;
 		> div {
@@ -121,7 +120,7 @@
 			}
 		}
 		> img {
-			width: calc(max(621px, 15em + 15vw));
+			width: calc(max(400px, 15em + 15vw));
 			position: absolute;
 			right: 100px;
 			bottom: -5em;
