@@ -1,6 +1,6 @@
 /*-------------------- DOCS CONTENT ------------------*/
 .md-content {
-	margin-left: 15vw;
+	margin-left: calc(max(250px, 15vw));
 	margin-top: 98px;
 	padding: 57px;
 	background: $dark-grey;
@@ -122,6 +122,9 @@
 		padding: 0;
 		& h2 {
 			color: $header-color;
+			margin: 0;
+			padding: 1em 1.3em;
+			border-bottom: 1px solid $light-grey;
 		}
 		> ul {
 			margin: 57px;
@@ -161,7 +164,7 @@
 /* Banners */
 .faq-banner, .community-banner, .blog-banner {
 	background: url(/assets/img/banner/banner-metaflux.jpg);
-	height: 456px;
+	/*height: 456px;*/
 	display: grid;
 	position: relative;
 	place-content: center;
@@ -169,6 +172,7 @@
 	background-size: cover;
 	text-align: center;
 	padding-top: 217px;
+	padding-bottom: 10em;
 	> svg {
 		position: absolute;
 		bottom: -2px;

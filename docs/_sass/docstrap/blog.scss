@@ -8,6 +8,9 @@
 	padding: 0 100px;
 }
 
+.md-content {
+	position: relative;
+}
 
 
 .blog-init {
@@ -108,12 +111,12 @@
 .bottom-banner {
 	background: url(/assets/img/banner/banner-blog.jpg);
 	background-position: center;
-	background-size: contain;
+	background-size: cover;
 	position: relative;
 	margin: auto;
 	border-radius: 4px;
 	padding: 182px 60px 55px 60px;
-	max-width: 60vw;
+	max-width: 70vw;
 	> .logo {
 		width: 160px;
 		height: 160px;

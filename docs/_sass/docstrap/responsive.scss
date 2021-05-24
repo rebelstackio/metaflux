@@ -209,7 +209,7 @@
 		grid-auto-flow: unset !important;
 		place-items: center;
 		& .graphic > img {
-			width: 80vw !important;
+			width: 65vw !important;
 		}
 		& .porperty > img {
 			width: 15em !important;
@@ -217,5 +217,11 @@
 	}
 	p, a, button {
 		font-size: 1.3em !important;
+	}
+	.faq-banner > p, .community-banner > p, .blog-banner > p {
+		max-width: unset !important;
+	}
+	.icon > * {
+		font-size: 8em !important;
 	}
 }

@@ -5,7 +5,9 @@ pretty-menu {
 
 	& .p-menu-box {
 		width: 15vw;
-		z-index: 2;
+		position: absolute !important;
+		left: calc(min(-250px, 15vw)) !important;
+		top: 0 !important;
 	}
 
 	& .p-menu-item-box.selected {
@@ -41,7 +43,7 @@ pretty-menu {
 			height: 3em;
 		}
 	}
-	
+
 	pretty-menu::after {
 		position: absolute;
 	}
