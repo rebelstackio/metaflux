@@ -48,7 +48,7 @@
 		}
 		.benefits {
 			grid-auto-flow: unset !important;
-			padding: unset !important;
+			padding: 0 3em 0 0 !important;
 			& .porperty {
 				& img {
 					width: 6rem !important;
@@ -91,9 +91,6 @@
 					}
 				}
 			}
-		}
-		.main-content {
-			padding-bottom: 2em !important;
 		}
 		.md-content {
 			margin-left: 0 !important;
@@ -159,6 +156,7 @@
 				}
 				> ul {
 					margin: 15px auto !important;
+					padding: 0 !important;
 				}
 			}
 		}
@@ -182,9 +180,6 @@
 		}
 		.faq-banner > p, .community-banner > p, .blog-banner > p {
 			padding: 0 !important;
-		}
-		.faq-banner, .community-banner, .blog-banner {
-			padding-top: 0 !important;
 		}
 		.mobile-nav {
 			display: flex !important;

@@ -173,6 +173,7 @@
 	text-align: center;
 	padding-top: 217px;
 	padding-bottom: 10em;
+	background-color: #000;
 	> svg {
 		position: absolute;
 		bottom: -2px;
@@ -180,7 +181,7 @@
 	> p {
 		padding: 0 10em;
 		margin: auto !important;
-		max-width: 60%;
+		max-width: 93ch;
 	}
 }
 

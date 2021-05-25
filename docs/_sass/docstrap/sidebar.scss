@@ -1,17 +1,22 @@
 pretty-menu {
 	& a {
-		color: $fuchsia !important;
+		color: $header-color !important;
+		font-weight: bold;
 	}
 
 	& .p-menu-box {
 		width: 15vw;
 		position: absolute !important;
-		left: calc(min(-250px, 15vw)) !important;
+		left: calc(min(-250px, -15vw)) !important;
 		top: 0 !important;
+		padding-top: 4em;
 	}
 
 	& .p-menu-item-box.selected {
 		background-color: rgba($color: $fuchsia, $alpha: .1) !important;
+		& a {
+			color: $fuchsia !important;
+		}
 		&::after {
 			right: unset !important;
 			border-color: $fuchsia !important;

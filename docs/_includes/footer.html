@@ -27,5 +27,18 @@
 				<a href="{{site.repository}}" target="_blank">GitHub</a>
 			</div>
 		</div>
+		<div id="go-top">
+			<i class="fas fa-chevron-up"></i>
+		</div>
 	</div>
 </div>
+
+<script>
+	/*
+	* Handle go top element
+	*/
+	const gotop = document.querySelector('#go-top');
+	gotop.addEventListener('click', () => {
+		window.scrollTo({top: 0, behavior: 'smooth'});
+	});
+</script>
