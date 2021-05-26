@@ -152,6 +152,7 @@
 		& > .logo {
 			display: grid;
 			grid-auto-flow: column;
+			font-size: unset !important;
 			> .logotipo {
 				height: calc(max(2em, 1em + 1vw));
 				width: auto;

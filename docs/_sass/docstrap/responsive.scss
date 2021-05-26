@@ -45,6 +45,10 @@
 					left: calc(50% - 25vw) !important;
 				}
 			}
+
+			& a {
+				left: calc(50% - 6em) !important;
+			}
 		}
 		.benefits {
 			grid-auto-flow: unset !important;
