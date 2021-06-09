@@ -1,7 +1,7 @@
 /*-------------------- DOCS CONTENT ------------------*/
 .md-content {
 	margin-left: calc(max(250px, 15vw));
-	margin-top: 98px;
+	margin-top: calc(max(100px, 1em + 3vw));
 	padding: 57px;
 	background: $dark-grey;
 	box-sizing: border-box;

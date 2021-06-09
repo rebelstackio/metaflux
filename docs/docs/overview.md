@@ -27,28 +27,33 @@ import { MetaComponent, Store } from '@rebelstack-io/metaflux';
 const storage = new Store(
 	{Counter: 1},
 	{
-	 INCREMENT: (action, state) => {
-		state.Counter = state.Counter + 1;
-		return {newState: state};
+		INCREMENT: (action, state) => {
+			state.Counter = state.Counter + 1;
+			return {newState: state};
 	}
 });
 
 class MyComponent extends MetaComponent {
+	
 	constructor () {
 		// Pass storage to MetaComponent parent
 		super(storage); 
 	}
+
 	render () {
+		
 		const content = Div().Button({
 			onclick: () => {
 			 // Dispatch Increment action when button is clicked.
 			 this.storage.dispatch({type: 'INCREMENT'});
 			}
 		}, 'Increase').baseNode()
+
 		// get initial state of Counter and assign to element.
 		this.text = content.Div({}, this.storage.getState().Main.value)
 		return content;
 	}
+
 	handleStoreEvents () {
 		return {
 			'INCREMENT': action => {
