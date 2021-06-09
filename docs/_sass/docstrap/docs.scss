@@ -218,6 +218,22 @@ code.highlighter-rouge {
 
 .hljs {
 	background: $code-bg !important;
+	/*
+	width: fit-content;
+	min-width: 70%;
+	margin: auto;
+	max-width: 100%;
+	position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: $fuchsia;
+			top: 0;
+			bottom: 0;
+			width: 10px;
+			left: -10px;
+		}
+	*/
 }
 
 .hljs-literal {
@@ -225,8 +241,12 @@ code.highlighter-rouge {
 }
 
 .highlighter-rouge {
-	& .highlight {
+	& pre.highlight {
 		position: relative;
+		width: fit-content;
+		min-width: 70%;
+		max-width: 100%;
+		margin: auto;
 		&::before {
 			content: '';
 			position: absolute;
@@ -264,6 +284,7 @@ code.language-HTML {
 	}
 }*/
 
-code > *{
+code *{
 	font-family: 'Roboto Mono', monospace !important;
+	font-size: 1rem !important;
 }

@@ -221,8 +221,8 @@ body {
 	display: grid;
 	background-color: $dark-grey;
 	place-content: center;
-	padding-top: 259px;
-	padding-bottom: 130px;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
 	position: relative;
 	> .footer-wrapper {
 		display: grid;
@@ -434,7 +434,7 @@ body {
 
 /*--------------------Global font size------------------------------------*/
 
-p, a, buttonm, span, ul {
+p, a, buttonm, span, ul, h3 {
 	font-size: clamp(1rem, calc(.2rem + 1vw), 45px);
 }
 h1 {
