@@ -193,6 +193,9 @@
 			margin: auto !important;
 			width: 100%;
 		}
+		.footer div {
+			place-items: center;
+		}
 }
 /* For tablets and mobiler landscape */
 @media only screen

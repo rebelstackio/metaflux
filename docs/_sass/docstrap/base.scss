@@ -399,10 +399,10 @@ body {
 	place-content: center;
 	border-radius: 50%;
 	background-color: $dark-purlple2;
-	width: 6em;
-	height: 6em;
+	width: calc(3vw + 3rem);
+	height: calc(3vw + 3rem);
 	position: absolute;
-	right: calc(2em + 6vw);
+	right: calc(2em + 2vw);
 	bottom: calc(2em + 6vw);
 	cursor: pointer;
 	overflow: hidden;
@@ -435,15 +435,19 @@ body {
 /*--------------------Global font size------------------------------------*/
 
 p, a, buttonm, span, ul, h3 {
-	font-size: clamp(1rem, calc(.2rem + 1vw), 45px);
+	font-size: clamp(.8rem, calc(.2rem + 1vw), 45px);
 }
 h1 {
-	font-size: clamp(2rem, calc(1rem + .7vw), 60px);
+	font-size: clamp(1.5rem, calc(1rem + .7vw), 60px);
 }
 h2 {
-	font-size: clamp(1.5rem, calc(.7rem + .7vw), 55px);
+	font-size: clamp(1.1rem, calc(.7rem + .7vw), 55px);
 }
 pre { tab-size: 2; }
+
+code * {
+	font-size: clamp(.8rem, calc(.2rem + .8vw), 40px) !important;
+}
 /*
 p, a, button, span, code, ul {
 	font-size: clamp(1em, calc(.2em + 1vw), 53px);;
