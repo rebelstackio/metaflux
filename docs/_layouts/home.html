@@ -31,9 +31,7 @@ layout: default
 
 		<div class="benefits">
 			<!-- the thingy in the left -->
-			<div class="graphic">
-				<img src="{{site.graph | relative_url}}" alt="" srcset="">
-			</div>
+			{%- include carousel.html -%}
 			<div class="props">
 				{{site.benefits}}
 			</div>

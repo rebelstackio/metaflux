@@ -61,8 +61,14 @@
 			> * {
 				place-self: center;
 			}
-			.graphic > img {
-				width: 80vw !important;
+			.graphic{
+				width: 80vw;
+				> .item {
+					width: 80vw;
+				}
+				& img {
+					width: 100% !important;
+				}
 			}
 		}
 		.fill {
@@ -210,9 +216,16 @@
 	.benefits {
 		grid-auto-flow: unset !important;
 		place-items: center;
-		& .graphic > img {
-			width: 65vw !important;
+		& .graphic {
+			width: 65vw;
+			> .item {
+				width: 65vw;
+			}
+			& img {
+				width: 100% !important;
+			}
 		}
+
 		& .porperty > img {
 			width: 15em !important;
 		}
