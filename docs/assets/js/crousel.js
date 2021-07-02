@@ -1,5 +1,5 @@
-/* Carousel */
-const INTV_SEC = 7000;
+/* Carousel timer in sec */
+const INTV_SEC = 10;
 
 const items = document.querySelectorAll('.graphic > .item');
 const controllsContainer = document.querySelector('.carousel-controlls');
@@ -81,5 +81,5 @@ function getInterval () {
 			items[i+1].classList.add('active')
 		}
 		roll()
-	}, INTV_SEC);
+	}, (INTV_SEC * 1000));
 }

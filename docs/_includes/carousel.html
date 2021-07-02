@@ -4,22 +4,32 @@
 		<div class="right"><i class="fas fa-chevron-right"></i></div>
 		<h3>Right-click to interact.</h3>
 		<div class="bullets">
-			<div class="bullet active"></div>
 			{% for item in site.data.carousel %}
-				<div class="bullet"></div>
+				{% if forloop.index == 1 %}
+					<div class="bullet active"></div>
+				{% else %}
+					<div class="bullet"></div>
+				{% endif %}
 			{% endfor %}
 		</div>
 	</div>
-	<div class="item active">
-		<img src="{{site.graph | relative_url}}">
-	</div>
 	{% for item in site.data.carousel %}
-	<div class="item">
-		<iframe height="600px" style="width: 100%;" scrolling="no" title="Tic tac toe" src="{{item}}" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-			See the Pen <a href="{{item}}">
-			Tic tac toe</a> by Osmar Reyes (<a href="https://codepen.io/osszzyy">@osszzyy</a>)
-			on <a href="https://codepen.io">CodePen</a>.
-		</iframe>
-	</div>
+	{% if forloop.index == 1 %}
+		<div class="item active">
+			<iframe style="width: 100%; height: 100%;" scrolling="no" title="Tic tac toe" src="{{item}}" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				See the Pen <a href="{{item}}">
+				Tic tac toe</a> by Osmar Reyes (<a href="https://codepen.io/osszzyy">@osszzyy</a>)
+				on <a href="https://codepen.io">CodePen</a>.
+			</iframe>
+		</div>
+	{% else %}
+		<div class="item">
+			<iframe style="width: 100%; height: 100%;" scrolling="no" title="Tic tac toe" src="{{item}}" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				See the Pen <a href="{{item}}">
+				Tic tac toe</a> by Osmar Reyes (<a href="https://codepen.io/osszzyy">@osszzyy</a>)
+				on <a href="https://codepen.io">CodePen</a>.
+			</iframe>
+		</div>
+	{% endif %}
 	{% endfor %}
 </div>

@@ -60,6 +60,7 @@
 			}
 			> * {
 				place-self: center;
+				grid-auto-flow: unset !important;
 			}
 			.graphic{
 				width: 80vw;

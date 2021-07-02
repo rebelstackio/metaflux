@@ -164,8 +164,6 @@ body {
 
 .benefits {
 	display: grid;
-	grid-auto-flow: column;
-	column-gap: 10px;
 	background-color: #fff;
 	text-align: justify;
 	padding: 0 10em;
@@ -173,6 +171,10 @@ body {
 	& > * {
 		padding: 5px;
 		display: grid;
+	}
+	& .props {
+		grid-auto-flow: column;
+		margin: 2rem 0;
 	}
 	& .porperty > svg {
 		place-self: center;
@@ -298,7 +300,7 @@ body {
 	bottom: 0;
 	flex-direction: column;
 	transition: all .1s linear;
-	transform: translate(-100%, 0);
+	transform: translate(-101%, 0);
 	> .actions {
 		display: grid;
 		padding: 0 15px;
@@ -435,9 +437,11 @@ body {
 .graphic {
 	overflow: hidden;
 	position: relative;
-	width: 40vw;
+	width: calc(min(80vw, 1650px));
+	place-self: center;
+	height: calc(min(80vh, 1300px));
 	> .item {
-		width: 40vw;
+		/*width: 40vw;*/
 		transition: transform .3s ease-out;
 	}
 	> .item:not(.active) {

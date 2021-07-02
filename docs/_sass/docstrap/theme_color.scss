@@ -177,12 +177,10 @@
 		& > .props {
 			> .porperty {
 				display: grid;
-				grid-auto-flow: column;
-				column-gap: 1em;
 				padding: 0 2em;
 				align-items: center;
 				> img {
-					width: calc(min(6vw, 243px));
+					width: calc(min(10vw, 243px));
 					place-self: center;
 				}
 				p {
